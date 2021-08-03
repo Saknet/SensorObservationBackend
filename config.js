@@ -1,4 +1,5 @@
-  const env = process.env;
+require('dotenv').config()
+const env = process.env;
 
 const config = {
   db: { 
@@ -8,7 +9,7 @@ const config = {
     password: env.DB_PASSWORD,
     database: env.DB_NAME,
   },
-  listPerPage: env.LIST_PER_PAGE || 10,
+  listPerPage: env.LIST_PER_PAGE || 100,
 };
 
 module.exports = config;
