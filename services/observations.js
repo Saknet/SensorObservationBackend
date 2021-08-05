@@ -9,13 +9,12 @@ async function getMultiple(page = 1){
     "SELECT o.id, o.phenomenontime_begin, o.resulttime, o.result, datastream.unitofmeasurement, o.featureofinterest_id FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null OFFSET $1 LIMIT $2", 
     [offset, config.listPerPage]
   );
-  const data = helper.emptyOrRows(rows);
-  const tsdata = timeseries.getTimeseries(data);
+  const data = helper.emptyOrRows(rows);;
+  const observations = timeseries.generateTimeseries(data);
   const meta = {page};
 
   return {
-    data,
-    meta
+    observations
   }
 }
 

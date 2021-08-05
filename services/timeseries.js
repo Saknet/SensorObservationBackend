@@ -1,109 +1,63 @@
-function getTimeseries(sensors) {
+function generateTimeseries(data) {
+    let timepoints = generateTimepoints(data);
+    let timeseries = new Object();
+    timeseries.w = calculateWatts(timepoints, data);
+    console.log( "timeseries; " + JSON.stringify(timeseries) );
+
+    return timeseries;
+}
+
+function generateTimepoints(data) {
     let firstTime = Number.MAX_VALUE;
     let lastTime = 0;
 
-    for (let i = 0; i < sensors.sensors.length; i++) {
-        let data = JSON.parse(sensors.sensors[i].sensordata);
-        for (let j = 0; j < data.timeseries.length; j++) {
-            if (data.timeseries[j].time < firstTime) {
-                firstTime = data.timeseries[j].time;
-            } 
-            if (data.timeseries[j].time > lastTime) {
-                lastTime = data.timeseries[j].time;
-            } 
-        }
+    for (let i = 0; i < data.length; i++) {
+        if ((data[i].resulttime.getTime() / 1000) < firstTime) {
+            firstTime = data[i].resulttime.getTime() / 1000;
+        } 
+        if ((data[i].resulttime.getTime() / 1000) > lastTime) {
+            lastTime = data[i].resulttime.getTime() / 1000;
+        } 
     }
 
-    let middleTime = lastTime - ((lastTime - firstTime) / 2);
+    let timepoints = [];
+    let pointone = firstTime + 1800;
+    timepoints.push(pointone);
 
-    let timeseries = new Object();
-    timeseries.firstTime = firstTime;
-    timeseries.lastTime = lastTime;
-    timeseries.middleTime = middleTime;
-    timeseries.secondTime = middleTime - ((lastTime - firstTime) / 4);
-    timeseries.fourthTime = lastTime - ((lastTime - firstTime) / 4);
-
-    return timeseries;
-
-}
-
-function getSensorsTotalResult(sensors, time, unitofmeasurement) {
-    let total = 0;
-    let sensorCount = 0;
-    for (let i = 0; i < sensors.sensors.length; i++) {
-        if (sensors.sensors[i].uom === unitofmeasurement) {
-            let data = JSON.parse(sensors.sensors[i].sensordata);
-            let closestDistance = Number.MAX_VALUE;
-            let closestTime = -1;
-            let closestIndex = -1;
-            for (let j = 0; j < data.timeseries.length; j++) {
-                if (time >= data.timeseries[j].time) {
-                    if ((time - data.timeseries[j].time) < closestDistance ) {
-                        closestIndex = j;
-                        closestTime = data.timeseries[j].time;
-                        closestDistance =  time - closestTime;
-                        console.log("end");
-                        console.log(j);
-                        console.log(closestTime);
-                    }
-                } else {
-                    if ((data.timeseries[j].time - time) < closestDistance ) {
-                        closestIndex = j;
-                        closestTime = data.timeseries[j].time;
-                        closestDistance =  closestTime - time;
-                        console.log("start");
-                        console.log(j);
-                        console.log(closestTime);
-                    }
-                }
-
-            }
-            console.log(closestDistance);
-            console.log(time);
-            console.log(data);
-            console.log(i);
-            console.log(closestIndex);
-            sensorCount++;
-            if (closestIndex != -1) {
-                total  += Number(data.timeseries[closestIndex].value);
-            }
-        }
-
-    }
-    console.log("total sensors");
-    console.log(sensorCount);
+    for (let i = pointone + 3600; i < lastTime; i += 3600) {
+        timepoints.push(i);
+    } 
     
-    return total;
-
+    return timepoints;
 }
 
-function parsetime(lastTime) {
-    let year = lastTime.substring(0, 4);
-    let month = lastTime.substring(4, 6);
-    let day = lastTime.substring(6, 8);
-    let hours = lastTime.substring(8, 10);
-    let minutes = lastTime.substring(10, 12);
-    let seconds = lastTime.substring(12, 14);
-    let ms = lastTime.substring(15, 17);
+function calculateWatts(timepoints, data) {
+    let timevaluepairs = [];
+    let w = { uom: 'w', timevaluepairs }
 
-    let realTimes = new Object();
+    for (let i = 0; i < timepoints.length; i++) {
 
-    let latest = new Date(Date.UTC(year, month, day, hours, minutes, seconds, ms));
-    let fifthTime = latest.getTime();
-    let fourthTime = fifthTime - 30 * 60 * 1000;
-    let thirdTime = fourthTime - 30 * 60 * 1000;
-    let secondTime = thirdTime - 30 * 60 * 1000;
-    let firstTime = secondTime - 30 * 60 * 1000;
+        let count = 0;
+        let total = 0;
+        let timepoint = 0;
+        for (let j = 0; j < data.length; j++) {
+            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r59' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+                total += Number(data[j].result);
+                count++;
+                timepoint = timepoints[i];
+                console.log("Math.abs(timepoints[j] - (data[i].resulttime.getTime() / 1000) <= 1800): " + Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)));
+                console.log("total: " + total);
+                console.log("data[i].unitofmeasurement: " + data[j].unitofmeasurement);
+            } 
+        }
 
-    realTimes.fifth = new Date(fifthTime).toLocaleString();
-    realTimes.fourth = new Date(fourthTime).toLocaleString();
-    realTimes.third = new Date(thirdTime).toLocaleString();
-    realTimes.second = new Date(secondTime).toLocaleString();
-    realTimes.first = new Date(firstTime).toLocaleString();
-
-    return realTimes;
-  }
+        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
+        w.timevaluepairs.push( timevaluepair );
+    }  
+    
+    return w;
+}
 
   module.exports = {
-    getTimeseries
+    generateTimeseries
   }
