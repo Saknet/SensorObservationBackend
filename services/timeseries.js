@@ -2,6 +2,9 @@ function generateTimeseries(data) {
     let timepoints = generateTimepoints(data);
     let timeseries = new Object();
     timeseries.w = calculateWatts(timepoints, data);
+    timeseries.v = calculateVolts(timepoints, data);
+    timeseries.j = calculateJoules(timepoints, data);
+    timeseries.a = calculateAmpere(timepoints, data);
     console.log( "timeseries; " + JSON.stringify(timeseries) );
 
     return timeseries;
@@ -45,9 +48,6 @@ function calculateWatts(timepoints, data) {
                 total += Number(data[j].result);
                 count++;
                 timepoint = timepoints[i];
-                console.log("Math.abs(timepoints[j] - (data[i].resulttime.getTime() / 1000) <= 1800): " + Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)));
-                console.log("total: " + total);
-                console.log("data[i].unitofmeasurement: " + data[j].unitofmeasurement);
             } 
         }
 
@@ -56,6 +56,78 @@ function calculateWatts(timepoints, data) {
     }  
     
     return w;
+}
+
+function calculateVolts(timepoints, data) {
+    let timevaluepairs = [];
+    let v = { uom: 'v', timevaluepairs }
+
+    for (let i = 0; i < timepoints.length; i++) {
+
+        let count = 0;
+        let total = 0;
+        let timepoint = 0;
+        for (let j = 0; j < data.length; j++) {
+            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r63' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+                total += Number(data[j].result);
+                count++;
+                timepoint = timepoints[i];
+            } 
+        }
+
+        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
+        v.timevaluepairs.push( timevaluepair );
+    }  
+    
+    return v;
+}
+
+function calculateAmpere(timepoints, data) {
+    let timevaluepairs = [];
+    let a = { uom: 'a', timevaluepairs }
+
+    for (let i = 0; i < timepoints.length; i++) {
+
+        let count = 0;
+        let total = 0;
+        let timepoint = 0;
+        for (let j = 0; j < data.length; j++) {
+            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r61' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+                total += Number(data[j].result);
+                count++;
+                timepoint = timepoints[i];
+            } 
+        }
+
+        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
+        a.timevaluepairs.push( timevaluepair );
+    }  
+    
+    return a;
+}
+
+function calculateJoules(timepoints, data) {
+    let timevaluepairs = [];
+    let j = { uom: 'j', timevaluepairs }
+
+    for (let i = 0; i < timepoints.length; i++) {
+
+        let count = 0;
+        let total = 0;
+        let timepoint = 0;
+        for (let j = 0; j < data.length; j++) {
+            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r57' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+                total += Number(data[j].result);
+                count++;
+                timepoint = timepoints[i];
+            } 
+        }
+
+        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
+        j.timevaluepairs.push( timevaluepair );
+    }  
+    
+    return j;
 }
 
   module.exports = {
