@@ -1,11 +1,30 @@
-function generateTimeseries(data) {
-    let timepoints = generateTimepoints(data);
+const unitofmeasurement = require('./unitofmeasurement');
+
+async function addUoM( data ) {
+    let dataWithUoM = [];
+    for ( let i = 0; i < data.length; i++ ) {
+        if ( String( data[i].unitofmeasurement ).startsWith( 'http' ) ) {
+            data[i].unitofmeasurement =  await unitofmeasurement.getUoMFromFintoApi( data[i].unitofmeasurement ); 
+            dataWithUoM.push(data[i]);   
+            
+        }
+    } 
+    console.log("dataWithUoM 12", dataWithUoM);
+
+    return dataWithUoM;
+}
+
+async function generateTimeseries( data ) {
+    const timepoints = generateTimepoints( data );
+    const dataWithUoM = await addUoM( data );
+    console.log("dataWithUoM 20", dataWithUoM);
+
     let timeseries = new Object();
-    timeseries.w = calculateWatts(timepoints, data);
-    timeseries.v = calculateVolts(timepoints, data);
-    timeseries.j = calculateJoules(timepoints, data);
-    timeseries.a = calculateAmpere(timepoints, data);
-    console.log( "timeseries; " + JSON.stringify(timeseries) );
+    timeseries.w = calculateWatts( timepoints, dataWithUoM) ;
+    timeseries.v = calculateVolts( timepoints, dataWithUoM );
+    timeseries.j = calculateJoules( timepoints, dataWithUoM );
+    timeseries.a = calculateAmpere( timepoints, dataWithUoM );
+    console.log( "timeseries; " + JSON.stringify( timeseries ) );
 
     return timeseries;
 }
@@ -44,7 +63,7 @@ function calculateWatts(timepoints, data) {
         let total = 0;
         let timepoint = 0;
         for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r59' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+            if (String(data[j].unitofmeasurement) == 'watt' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
                 total += Number(data[j].result);
                 count++;
                 timepoint = timepoints[i];
@@ -68,7 +87,7 @@ function calculateVolts(timepoints, data) {
         let total = 0;
         let timepoint = 0;
         for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r63' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+            if (String(data[j].unitofmeasurement) == 'volt' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
                 total += Number(data[j].result);
                 count++;
                 timepoint = timepoints[i];
@@ -92,7 +111,7 @@ function calculateAmpere(timepoints, data) {
         let total = 0;
         let timepoint = 0;
         for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r61' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+            if (String(data[j].unitofmeasurement) == 'ampère' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
                 total += Number(data[j].result);
                 count++;
                 timepoint = timepoints[i];
@@ -116,7 +135,7 @@ function calculateJoules(timepoints, data) {
         let total = 0;
         let timepoint = 0;
         for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'http://finto.fi/ucum/en/page/r57' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
+            if (String(data[j].unitofmeasurement) == 'joule' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
                 total += Number(data[j].result);
                 count++;
                 timepoint = timepoints[i];

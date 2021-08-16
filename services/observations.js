@@ -10,7 +10,7 @@ async function getMultiple(page = 1){
     [offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);;
-  const observations = timeseries.generateTimeseries(data);
+  const observations = await timeseries.generateTimeseries(data);
   const meta = {page};
 
   return {
