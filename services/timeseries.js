@@ -1,152 +1,103 @@
-const unitofmeasurement = require('./unitofmeasurement');
+const unitofmeasurementService = require('./unitofmeasurement');
 
+/* Function that adds unit of measurement value instead of linkeddata to the data  */
 async function addUoM( data ) {
     let dataWithUoM = [];
     for ( let i = 0; i < data.length; i++ ) {
-        if ( String( data[i].unitofmeasurement ).startsWith( 'http' ) ) {
-            data[i].unitofmeasurement =  await unitofmeasurement.getUoMFromFintoApi( data[i].unitofmeasurement ); 
-            dataWithUoM.push(data[i]);   
-            
-        }
+        
+        data[i].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[i].uom ); 
+        dataWithUoM.push(data[i]);           
+        
     } 
-    console.log("dataWithUoM 12", dataWithUoM);
 
     return dataWithUoM;
 }
 
+/* Function that calls other functions to generate a timeseries for the feature  */
 async function generateTimeseries( data ) {
-    const timepoints = generateTimepoints( data );
     const dataWithUoM = await addUoM( data );
-    console.log("dataWithUoM 20", dataWithUoM);
+    const timepoints = generateTimepoints( data );
 
     let timeseries = new Object();
-    timeseries.w = calculateWatts( timepoints, dataWithUoM) ;
-    timeseries.v = calculateVolts( timepoints, dataWithUoM );
-    timeseries.j = calculateJoules( timepoints, dataWithUoM );
-    timeseries.a = calculateAmpere( timepoints, dataWithUoM );
+    timeseries.w = generateTimeseriesForUoM( timepoints, dataWithUoM, 'watt') ;
+    timeseries.v = generateTimeseriesForUoM( timepoints, dataWithUoM, 'volt' );
+    timeseries.j = generateTimeseriesForUoM( timepoints, dataWithUoM, 'joule' );
+    timeseries.a = generateTimeseriesForUoM( timepoints, dataWithUoM, 'ampère' );
     console.log( "timeseries; " + JSON.stringify( timeseries ) );
 
     return timeseries;
 }
 
-function generateTimepoints(data) {
+/* Function that generates timepoints for every one hour there is observations  */
+function generateTimepoints( data ) {
     let firstTime = Number.MAX_VALUE;
     let lastTime = 0;
 
-    for (let i = 0; i < data.length; i++) {
-        if ((data[i].resulttime.getTime() / 1000) < firstTime) {
-            firstTime = data[i].resulttime.getTime() / 1000;
-        } 
-        if ((data[i].resulttime.getTime() / 1000) > lastTime) {
-            lastTime = data[i].resulttime.getTime() / 1000;
-        } 
+    for ( let i = 0; i < data.length; i++ ) {
+
+        let observations = data[ i ].observations;
+
+        for ( let j = 0; j < observations.length; j++) {
+
+            if ( ( observations[ j ].resulttime.getTime() / 1000 ) < firstTime ) {
+                firstTime = observations[ j ].resulttime.getTime() / 1000;
+            } 
+
+            if ( ( observations[ j ].resulttime.getTime() / 1000 )  > lastTime ) {
+                lastTime = observations[ j ].resulttime.getTime() / 1000;
+            }             
+        }
     }
 
-    let timepoints = [];
-    let pointone = firstTime + 1800;
+    let timepoints = [ ];
+    const pointone = firstTime + 1800;
     timepoints.push(pointone);
 
-    for (let i = pointone + 3600; i < lastTime; i += 3600) {
-        timepoints.push(i);
+    for ( let i = pointone + 3600; i < lastTime; i += 3600 )  {
+        timepoints.push( i );
     } 
     
     return timepoints;
 }
 
-function calculateWatts(timepoints, data) {
-    let timevaluepairs = [];
-    let w = { uom: 'w', timevaluepairs }
+/* Function that generates timeseries for specific unit of measurement  */
+function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
+    let timevaluepairs = [ ];
+    let timeseries = { uom: unitofmeasurement, timevaluepairs }
 
-    for (let i = 0; i < timepoints.length; i++) {
-
-        let count = 0;
-        let total = 0;
-        let timepoint = 0;
-        for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'watt' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
-                total += Number(data[j].result);
-                count++;
-                timepoint = timepoints[i];
-            } 
-        }
-
-        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
-        w.timevaluepairs.push( timevaluepair );
-    }  
-    
-    return w;
-}
-
-function calculateVolts(timepoints, data) {
-    let timevaluepairs = [];
-    let v = { uom: 'v', timevaluepairs }
-
-    for (let i = 0; i < timepoints.length; i++) {
+    for ( let i = 0; i < timepoints.length; i++ ) {
 
         let count = 0;
         let total = 0;
         let timepoint = 0;
-        for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'volt' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
-                total += Number(data[j].result);
-                count++;
-                timepoint = timepoints[i];
+
+        for ( let j = 0; j < data.length; j++ ) {
+
+            if ( String( data[ j ].uom ) == unitofmeasurement) {
+
+                let observations = data[ j ].observations;
+
+                for ( let k = 0; k < observations.length; k++ ) {
+
+                    let resulttime = observations[ k ].resulttime;
+
+                    if ( Math.abs( timepoints[ i ] - ( resulttime.getTime() / 1000 ) ) <= 1800 ) {
+
+                        total += Number( observations[ k ].result );
+                        count++;
+                        timepoint = timepoints[ i ];
+
+                    }
+                }
             } 
         }
 
-        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
-        v.timevaluepairs.push( timevaluepair );
+        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total / count };
+        timeseries.timevaluepairs.push( timevaluepair );
+
     }  
     
-    return v;
-}
-
-function calculateAmpere(timepoints, data) {
-    let timevaluepairs = [];
-    let a = { uom: 'a', timevaluepairs }
-
-    for (let i = 0; i < timepoints.length; i++) {
-
-        let count = 0;
-        let total = 0;
-        let timepoint = 0;
-        for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'ampère' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
-                total += Number(data[j].result);
-                count++;
-                timepoint = timepoints[i];
-            } 
-        }
-
-        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
-        a.timevaluepairs.push( timevaluepair );
-    }  
-    
-    return a;
-}
-
-function calculateJoules(timepoints, data) {
-    let timevaluepairs = [];
-    let j = { uom: 'j', timevaluepairs }
-
-    for (let i = 0; i < timepoints.length; i++) {
-
-        let count = 0;
-        let total = 0;
-        let timepoint = 0;
-        for (let j = 0; j < data.length; j++) {
-            if (String(data[j].unitofmeasurement) == 'joule' && Math.abs(timepoints[i] - (data[j].resulttime.getTime() / 1000)) <= 1800) {
-                total += Number(data[j].result);
-                count++;
-                timepoint = timepoints[i];
-            } 
-        }
-
-        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total/count };
-        j.timevaluepairs.push( timevaluepair );
-    }  
-    
-    return j;
+    return timeseries;
 }
 
   module.exports = {
