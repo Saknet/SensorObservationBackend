@@ -2,7 +2,9 @@ const unitofmeasurementService = require('./unitofmeasurement');
 
 /* Function that adds unit of measurement value instead of linkeddata to the data  */
 async function addUoM( data ) {
+
     let dataWithUoM = [];
+    
     for ( let i = 0; i < data.length; i++ ) {
         
         data[i].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[i].uom ); 
@@ -11,12 +13,14 @@ async function addUoM( data ) {
     } 
 
     return dataWithUoM;
+
 }
 
 /* Function that calls other functions to generate a timeseries for the feature  */
-async function generateTimeseries( data ) {
+async function generateTimeseries( data, startTime, endTime ) {
+
     const dataWithUoM = await addUoM( data );
-    const timepoints = generateTimepoints( data );
+    const timepoints = generateTimepoints( startTime, endTime );
 
     let timeseries = new Object();
     timeseries.w = generateTimeseriesForUoM( timepoints, dataWithUoM, 'watt') ;
@@ -28,42 +32,28 @@ async function generateTimeseries( data ) {
     return timeseries;
 }
 
-/* Function that generates timepoints for every one hour there is observations  */
-function generateTimepoints( data ) {
-    let firstTime = Number.MAX_VALUE;
-    let lastTime = 0;
+/* Function that generates timepoints for every one hour */
+function generateTimepoints( startTime, endTime  ) {
 
-    for ( let i = 0; i < data.length; i++ ) {
-
-        let observations = data[ i ].observations;
-
-        for ( let j = 0; j < observations.length; j++) {
-
-            if ( ( observations[ j ].resulttime.getTime() / 1000 ) < firstTime ) {
-                firstTime = observations[ j ].resulttime.getTime() / 1000;
-            } 
-
-            if ( ( observations[ j ].resulttime.getTime() / 1000 )  > lastTime ) {
-                lastTime = observations[ j ].resulttime.getTime() / 1000;
-            }             
-        }
-    }
-
+    let firstTime = new Date( startTime ).getTime() / 1000;
+    let lastTime = new Date( endTime ).getTime() / 1000;
     let timepoints = [ ];
     const pointone = firstTime + 1800;
-    timepoints.push(pointone);
+    timepoints.push( pointone );
 
     for ( let i = pointone + 3600; i < lastTime; i += 3600 )  {
         timepoints.push( i );
     } 
     
     return timepoints;
+
 }
 
 /* Function that generates timeseries for specific unit of measurement  */
 function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
+
     let timevaluepairs = [ ];
-    let timeseries = { uom: unitofmeasurement, timevaluepairs }
+    let timeseries = { uom: unitofmeasurement, timevaluepairs };
 
     for ( let i = 0; i < timepoints.length; i++ ) {
 
