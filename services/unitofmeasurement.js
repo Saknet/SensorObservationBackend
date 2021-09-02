@@ -1,17 +1,16 @@
-const redis = require( 'redis' );
+const asyncRedis = require("async-redis");    
 const redisPort = 6379;
-const client = redis.createClient( redisPort );
+const client = asyncRedis.createClient( redisPort );
 const got = require('got');
 
 client.on( "error" , ( err ) => {
     console.log( err );
 })
 
-async function getUoMFromFintoApi ( link ) {
+function getUoMFromFintoApi ( link ) {
 
     const url = preProcessApiLink( link );
     const uom = getUoM( url );
-
     return uom;
 
 }
@@ -39,20 +38,24 @@ function preProcessApiLink ( link ) {
 
 async function getUoM( fintourl ) {
 
+    const cachedData = await client.get( fintourl );
+
+    if ( cachedData ) {
+        return cachedData;
+    }
+    
     const response = await got( fintourl );
     const body = JSON.parse( response.body );
-    console.log("response", body );
-    console.log("graph", body.graph );
-
+            
     const graph = body.graph;
-
+            
     for ( let i = 0; i < graph.length; i++ ) {
         
         if ( 'http://urn.fi/URN:NBN:fi:au:ucum:p1' in graph[ i ] ) {
-
+            
             client.setex( fintourl, 600, String( graph[ i ].prefLabel.value ) )
             return graph[ i ].prefLabel.value;
-
+            
         }
     }
 }
