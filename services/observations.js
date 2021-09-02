@@ -22,12 +22,6 @@ async function getMultiple( page = 1, body ) {
 
   }
 
-  console.log("body", body );
-  console.log("start", startTime );
-  console.log("end", endTime );
-  console.log("id", body.gmlid );
-  console.log("id", body.ratu );
-
   const rows = await dbService.query(
     "SELECT o.id, o.phenomenontime_begin, o.resulttime, o.result, datastream.unitofmeasurement, o.featureofinterest_id FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null AND o.resulttime BETWEEN $3 AND $4 OFFSET $1 LIMIT $2", 
     [ offset, config.listPerPage, startTime, endTime]

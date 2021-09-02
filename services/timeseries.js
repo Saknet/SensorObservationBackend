@@ -4,10 +4,10 @@ const unitofmeasurementService = require('./unitofmeasurement');
 async function addUoM( data ) {
 
     let dataWithUoM = [];
-    
+
     for ( let i = 0; i < data.length; i++ ) {
-        
-        data[i].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[i].uom ); 
+
+        data[i].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[i].uom );
         dataWithUoM.push(data[i]);           
         
     } 
@@ -27,7 +27,6 @@ async function generateTimeseries( data, startTime, endTime ) {
     timeseries.v = generateTimeseriesForUoM( timepoints, dataWithUoM, 'volt' );
     timeseries.j = generateTimeseriesForUoM( timepoints, dataWithUoM, 'joule' );
     timeseries.a = generateTimeseriesForUoM( timepoints, dataWithUoM, 'ampère' );
-    console.log( "timeseries; " + JSON.stringify( timeseries ) );
 
     return timeseries;
 }
@@ -59,7 +58,6 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
 
         let count = 0;
         let total = 0;
-        let timepoint = 0;
 
         for ( let j = 0; j < data.length; j++ ) {
 
@@ -71,19 +69,23 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
 
                     let resulttime = observations[ k ].resulttime;
 
-                    if ( Math.abs( timepoints[ i ] - ( resulttime.getTime() / 1000 ) ) <= 1800 ) {
+                    if ( resulttime.getTime() != null && observations[ k ].result != null && Math.abs( timepoints[ i ] - ( resulttime.getTime() / 1000 ) ) <= 1800 ) {
 
                         total += Number( observations[ k ].result );
                         count++;
-                        timepoint = timepoints[ i ];
 
                     }
                 }
             } 
         }
 
-        let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: total / count };
-        timeseries.timevaluepairs.push( timevaluepair );
+        // Only add to timeseries if there is observation results
+        if ( count > 0 ) {
+
+            let timevaluepair = { time: timepoints[ i ], totalvalue: total, averagevalue: total / count };
+            timeseries.timevaluepairs.push( timevaluepair );
+
+        }
 
     }  
     
