@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pm2": "pm2 start processes.json --no-daemon",
     "start": "node ./bin/www",
     "lint": "eslint ."
   },
@@ -28,7 +29,8 @@
     "got": "^11.8.2",
     "morgan": "~1.9.1",
     "node-cache": "^5.1.2",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "pm2": "^5.1.1"
   },
   "devDependencies": {
     "@architect/sandbox": "^3.3.7",
