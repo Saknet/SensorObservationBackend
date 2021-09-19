@@ -54,9 +54,7 @@ async function getUoM( fintourl ) {
     for ( let i = 0; i < graph.length; i++ ) {
         
         if ( 'http://urn.fi/URN:NBN:fi:au:ucum:p1' in graph[ i ] ) {
-
-            console.log( "graph[ i ].prefLabel.value", graph[ i ].prefLabel.value );
-            
+        
             client.setex( fintourl, 600, String( graph[ i ].prefLabel.value ) )
             return graph[ i ].prefLabel.value;
             

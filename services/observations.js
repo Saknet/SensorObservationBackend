@@ -38,7 +38,6 @@ async function getMultiple( page = 1, body ) {
   );
 
   const data = helper.emptyOrRows( rows );
-  console.log( "data", data );
   const processedData = dataProcessingService.preProcessdata( data );
   const observations = await timeseriesService.generateTimeseries( processedData, startTime, endTime );
 
