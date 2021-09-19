@@ -1,9 +1,11 @@
-const asyncRedis = require("async-redis");    
-const redisPort = 6379;
-const client = asyncRedis.createClient( redisPort );
 const got = require('got');
+const asyncRedis = require("async-redis");    
+const client = asyncRedis.createClient( {
+    host: 'redis-server',
+    port: 6379
+} );
 
-client.on( "error" , ( err ) => {
+client.on( "Redis error" , ( err ) => {
     console.log( err );
 })
 
@@ -52,6 +54,8 @@ async function getUoM( fintourl ) {
     for ( let i = 0; i < graph.length; i++ ) {
         
         if ( 'http://urn.fi/URN:NBN:fi:au:ucum:p1' in graph[ i ] ) {
+
+            console.log( "graph[ i ].prefLabel.value", graph[ i ].prefLabel.value );
             
             client.setex( fintourl, 600, String( graph[ i ].prefLabel.value ) )
             return graph[ i ].prefLabel.value;

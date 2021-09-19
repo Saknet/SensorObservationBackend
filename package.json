@@ -30,7 +30,8 @@
     "morgan": "~1.9.1",
     "node-cache": "^5.1.2",
     "pg": "^8.7.1",
-    "pm2": "^5.1.1"
+    "pm2": "^5.1.1",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
     "@architect/sandbox": "^3.3.7",

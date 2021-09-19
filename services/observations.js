@@ -7,6 +7,7 @@ const timeseriesService = require( './timeseries' );
 async function getMultiple( page = 1, body ) {
 
   const offset = helper.getOffset( page, config.listPerPage );
+  let gmlid = body.gmlid;
   let startTime = body.start;
   let endTime = body.end;
 
@@ -22,15 +23,24 @@ async function getMultiple( page = 1, body ) {
 
   }
 
+  // for testing only remove in production
+  if ( gmlid == null ) {
+
+    gmlid = 'BID_4f77b0c3-812f-470b-b305-7c4807e2934f';
+
+  }
+
+  const featureId = '1';
+
   const rows = await dbService.query(
-    "SELECT o.id, o.phenomenontime_begin, o.resulttime, o.result, datastream.unitofmeasurement, o.featureofinterest_id FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null AND o.resulttime BETWEEN $3 AND $4 OFFSET $1 LIMIT $2", 
-    [ offset, config.listPerPage, startTime, endTime]
+    "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
+    [ gmlid, startTime, endTime ]
   );
 
-  const data = helper.emptyOrRows( rows );;
+  const data = helper.emptyOrRows( rows );
+  console.log( "data", data );
   const processedData = dataProcessingService.preProcessdata( data );
   const observations = await timeseriesService.generateTimeseries( processedData, startTime, endTime );
-  const meta = { page };
 
   return {
     observations

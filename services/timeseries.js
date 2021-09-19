@@ -27,6 +27,8 @@ async function generateTimeseries( data, startTime, endTime ) {
     timeseries.v = generateTimeseriesForUoM( timepoints, dataWithUoM, 'volt' );
     timeseries.j = generateTimeseriesForUoM( timepoints, dataWithUoM, 'joule' );
     timeseries.a = generateTimeseriesForUoM( timepoints, dataWithUoM, 'ampère' );
+    timeseries.decibel = generateTimeseriesForUoM( timepoints, dataWithUoM, 'bel sound pressure' );
+    timeseries.degreeCelsius = generateTimeseriesForUoM( timepoints, dataWithUoM, 'degree Celsius' );
 
     return timeseries;
 }
@@ -67,9 +69,9 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
 
                 for ( let k = 0; k < observations.length; k++ ) {
 
-                    let resulttime = observations[ k ].resulttime;
+                    let phenomenontime_begin = observations[ k ].phenomenontime_begin;
 
-                    if ( resulttime.getTime() != null && observations[ k ].result != null && Math.abs( timepoints[ i ] - ( resulttime.getTime() / 1000 ) ) <= 1800 ) {
+                    if ( phenomenontime_begin.getTime() != null && observations[ k ].result != null && Math.abs( timepoints[ i ] - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
 
                         total += Number( observations[ k ].result );
                         count++;

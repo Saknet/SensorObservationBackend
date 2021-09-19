@@ -3,15 +3,16 @@
 function preProcessdata( data ) {
 
     let processedData = []; 
-    let uomLink = '';
     let uomLinkList = [];
 
     for ( let i = 0; i < data.length; i++ ) {
 
-        if ( String( data[ i ].unitofmeasurement ).startsWith( 'http' ) && data[ i ].resulttime != null && data[ i ].result != null ) {
+        //check if there is linked uom data on row that has observation time and value
+        if ( String( data[ i ].unitofmeasurement ).startsWith( 'http' ) && data[ i ].phenomenontime_begin != null && data[ i ].result != null ) {
 
-            uomLink = data[ i ].unitofmeasurement;
+            let uomLink = data[ i ].unitofmeasurement;
 
+            //if uom already exists in the previously prossed data add the observation data under it
             if ( uomLinkList.includes( uomLink ) ) {
 
                 for ( let j = 0; j < processedData.length; j++ ) {

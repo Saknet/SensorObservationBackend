@@ -1,4 +1,5 @@
-# dependencies
-node_modules
-# misc
 .env
+.git
+.dockerignore
+node_modules/
+npm-debug.log/
