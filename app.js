@@ -15,8 +15,8 @@ app.use( cors() );
 app.use( express.urlencoded( { extended: false } ) );
 app.use( cookieParser() );
 
-app.use( '/', indexRouter );
-app.use( '/observations', observationsRouter );
-app.use( '/features', featuresRouter );
+app.use( '/observationdata', indexRouter );
+app.use( '/observationdata/observations', observationsRouter );
+app.use( '/observationdata/features', featuresRouter );
 
 module.exports = app;
