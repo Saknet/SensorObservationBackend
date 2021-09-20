@@ -31,6 +31,30 @@ VALUES('63640', 'health center', '{ "gmlid": "BID_3224c543-6e8e-4e0d-a828-ca0742
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('59766', 'redi', '{ "gmlid": "BID_d6f03f71-d260-4525-9073-dc0cde28575e", "ratu": "59766" }');
 
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'office, under construction', '{ "gmlid": "BID_699d39fa-9ee2-446c-a019-4b1efb67b42a", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'redi shopping center', '{ "gmlid": "BID_49a3253a-ffbe-49a7-a7bd-a6fdc0fd7f6e", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'apartment building', '{ "gmlid": "BID_6e5c165d-9eb9-4b3d-9a4b-76958e13b4df", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'apartment building', '{ "gmlid": "BID_d1ebc713-dbbb-4e42-95d4-4b00e70dc67f", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'apartment building', '{ "gmlid": "BID_45df470a-9e9f-4bb4-82b0-d7b2874f97a6", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'apartment building', '{ "gmlid": "BID_f76c9ab3-beb9-4be5-894b-0099d8b4303c", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'apartment building', '{ "gmlid": "BID_0b3e6442-6beb-4d51-9da5-2f92c5264482", "ratu": "n/a" }');
+
+INSERT INTO featureofinterest (name, description, feature) 
+VALUES('n/a', 'apartment building', '{ "gmlid": "BID_e89fde40-8ae2-4f20-a409-62b129b13f72", "ratu": "n/a" }');
+
 INSERT INTO datastream(unitofmeasurement)
 SELECT 
   (
