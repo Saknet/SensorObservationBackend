@@ -55,7 +55,7 @@ async function getUoM( fintourl ) {
         
         if ( 'http://urn.fi/URN:NBN:fi:au:ucum:p1' in graph[ i ] ) {
         
-            client.setex( fintourl, 600, String( graph[ i ].prefLabel.value ) )
+            client.setex( fintourl, 6000, String( graph[ i ].prefLabel.value ) )
             return graph[ i ].prefLabel.value;
             
         }

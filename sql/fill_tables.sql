@@ -71,4 +71,4 @@ FROM GENERATE_SERIES(1, 1000);
 
 INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)
 SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (100::int) + 1), floor(random() * (1000::int) + 1), floor(random() * (11::int) + 1) 
-FROM generate_series(1, 100000);                           
+FROM generate_series(1, 200000);                           
