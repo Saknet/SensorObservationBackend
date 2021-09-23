@@ -13,8 +13,6 @@ async function getMultiple( ) {
     "SELECT * FROM featureofinterest WHERE feature->>'gmlid' = 'BID_0a3a6049-77d6-4c9e-8486-c3469fe49cc7'" 
   );
 
-  console.log( "rows", rows );
-
   const data = helper.emptyOrRows( rows );
 
 

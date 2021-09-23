@@ -7,8 +7,8 @@ async function addUoM( data ) {
 
     for ( let i = 0; i < data.length; i++ ) {
 
-        data[i].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[i].uom );
-        dataWithUoM.push(data[i]);           
+        data[ i ].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[ i ].uom );
+        dataWithUoM.push( data[ i ] );           
         
     } 
 
@@ -54,7 +54,9 @@ function generateTimepoints( startTime, endTime  ) {
 function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
 
     let timevaluepairs = [ ];
-    let timeseries = { uom: unitofmeasurement, timevaluepairs };
+    let averages = [ ];
+    let observationtimes = [ ];
+    let timeseries = { uom: unitofmeasurement, timevaluepairs, averages, observationtimes };
 
     for ( let i = 0; i < timepoints.length; i++ ) {
 
@@ -84,8 +86,13 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
         // Only add to timeseries if there is observation results
         if ( count > 0 ) {
 
-            let timevaluepair = { time: timepoints[ i ], totalvalue: total, averagevalue: total / count };
+            let time = new Date();
+            time.setTime( timepoints[ i ] * 1000 )
+            let average = total / count;
+            let timevaluepair = { time: timepoints[ i ], totalvalue: total, averagevalue: average, observationscount: count };
             timeseries.timevaluepairs.push( timevaluepair );
+            timeseries.averages.push( average );
+            timeseries.observationtimes.push( time.toLocaleString( 'fi-FI', { timeZone: 'Europe/Helsinki' } ) );
 
         }
 
