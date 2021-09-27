@@ -8,8 +8,8 @@ async function addUoM( data ) {
     for ( let i = 0; i < data.length; i++ ) {
 
         data[ i ].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[ i ].uom );
-        dataWithUoM.push( data[ i ] );           
-        
+        dataWithUoM.push( data[ i ] ); 
+
     } 
 
     return dataWithUoM;
@@ -29,6 +29,7 @@ async function generateTimeseries( data, startTime, endTime ) {
     timeseries.a = generateTimeseriesForUoM( timepoints, dataWithUoM, 'ampère' );
     timeseries.decibel = generateTimeseriesForUoM( timepoints, dataWithUoM, 'bel sound pressure' );
     timeseries.degreeCelsius = generateTimeseriesForUoM( timepoints, dataWithUoM, 'degree Celsius' );
+    timeseries.pm = generateTimeseriesForUoM( timepoints, dataWithUoM, 'particulate matter' );
 
     return timeseries;
 }

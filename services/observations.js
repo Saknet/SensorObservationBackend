@@ -30,16 +30,20 @@ async function getMultiple( page = 1, body ) {
 
   }
 
-  const featureId = '1';
-
   const rows = await dbService.query(
     "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
     [ gmlid, startTime, endTime ]
   );
 
+  let observations = [];
   const data = helper.emptyOrRows( rows );
-  const processedData = dataProcessingService.preProcessdata( data );
-  const observations = await timeseriesService.generateTimeseries( processedData, startTime, endTime );
+
+  if ( data.length > 0 ) {
+
+    const processedData = dataProcessingService.preProcessdata( data );
+    observations = await timeseriesService.generateTimeseries( processedData, startTime, endTime );
+
+  }
 
   return {
     observations

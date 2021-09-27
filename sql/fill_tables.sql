@@ -55,20 +55,41 @@ VALUES('n/a', 'apartment building', '{ "gmlid": "BID_0b3e6442-6beb-4d51-9da5-2f9
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('n/a', 'apartment building', '{ "gmlid": "BID_e89fde40-8ae2-4f20-a409-62b129b13f72", "ratu": "n/a" }');
 
+
+INSERT INTO datastream(unitofmeasurement)
+SELECT 'http://finto.fi/ucum/en/page/r418'
+FROM GENERATE_SERIES(1, 200);
+
+INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)
+SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (100::int) + 21), floor(random() * (200::int) + 1), floor(random() * (19::int) + 1) 
+FROM generate_series(1, 50000); 
+
 INSERT INTO datastream(unitofmeasurement)
 SELECT 
   (
-    CASE (RANDOM() * 5)::INT
-      WHEN 0 THEN 'http://finto.fi/ucum/en/page/r418'
-      WHEN 1 THEN 'http://finto.fi/ucum/en/page/r73'
-      WHEN 2 THEN 'http://finto.fi/ucum/en/page/r63'
-      WHEN 3 THEN 'http://finto.fi/ucum/en/page/r61'
-      WHEN 4 THEN 'http://finto.fi/ucum/en/page/r59'
-      WHEN 5 THEN 'http://finto.fi/ucum/en/page/r57'                  
+    CASE (RANDOM() * 2)::INT
+      WHEN 0 THEN 'http://finto.fi/ucum/en/page/r63'
+      WHEN 1 THEN 'http://finto.fi/ucum/en/page/r59'
+      WHEN 2 THEN 'http://finto.fi/ucum/en/page/r57'                  
     END
   )
-FROM GENERATE_SERIES(1, 1000);
+FROM GENERATE_SERIES(1, 600);
 
 INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)
-SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (100::int) + 1), floor(random() * (1000::int) + 1), floor(random() * (11::int) + 1) 
-FROM generate_series(1, 200000);                           
+SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (999::int) + 30), floor(random() * (600::int) + 201), floor(random() * (19::int) + 1) 
+FROM generate_series(1, 200000);
+
+INSERT INTO datastream(unitofmeasurement)
+SELECT 
+  (
+    CASE (RANDOM() * 2)::INT
+      WHEN 0 THEN 'http://finto.fi/ucum/en/page/r73'
+      WHEN 1 THEN 'http://finto.fi/ucum/en/page/r61'
+      WHEN 2 THEN 'http://finto.fi/mesh/en/page/D052638'                  
+    END
+  )
+FROM GENERATE_SERIES(1, 600);
+
+INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)
+SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (30::int) + 1), floor(random() * (600::int) + 801), floor(random() * (19::int) + 1) 
+FROM generate_series(1, 200000); 

@@ -18,6 +18,14 @@ function getUoMFromFintoApi ( link ) {
 }
 
 function preProcessApiLink ( link ) {
+
+    //case of air quality sensors
+    if ( link == 'http://finto.fi/mesh/en/page/D052638' ) {
+        
+        return 'https://finto.fi/rest/v1/mesh/data?uri=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fmesh%2FD052638&format=application/ld%2Bjson';
+
+    }
+
     let fintoBaseUrl = 'https://finto.fi/rest/v1/ucum/';
     let url = 'data?uri=http%3A%2F%2Furn.fi%2FURN%3ANBN%3Afi%3Aau%3Aucum%3Ar';
     let parts = '';
@@ -55,9 +63,15 @@ async function getUoM( fintourl ) {
         
         if ( 'http://urn.fi/URN:NBN:fi:au:ucum:p1' in graph[ i ] ) {
         
-            client.setex( fintourl, 6000, String( graph[ i ].prefLabel.value ) )
+            client.setex( fintourl, 6000, String( graph[ i ].prefLabel.value ) );
             return graph[ i ].prefLabel.value;
             
+        }
+
+        if ( fintourl == 'https://finto.fi/rest/v1/mesh/data?uri=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fmesh%2FD052638&format=application/ld%2Bjson' ) {
+            client.setex( fintourl, 6000, String( 'particulate matter' ) ); 
+            return 'particulate matter';
+
         }
     }
 }
