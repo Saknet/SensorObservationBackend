@@ -64,7 +64,7 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
         let count = 0;
         let total = 0;
 
-        for ( let j = 0, dl = data.length; dl; j++ ) {
+        for ( let j = 0, dl = data.length; j < dl; j++ ) {
 
             if ( String( data[ j ].uom ) == unitofmeasurement) {
 
