@@ -5,7 +5,7 @@ function preProcessdata( data ) {
     let processedData = []; 
     let uomLinkList = [];
 
-    for ( let i = 0; i < data.length; i++ ) {
+    for ( let i = 0, len = data.length; i < len; i++ ) {
 
         //check if there is linked uom data on row that has observation time and value
         if ( String( data[ i ].unitofmeasurement ).startsWith( 'http' ) && data[ i ].phenomenontime_begin != null && data[ i ].result != null ) {
@@ -15,7 +15,7 @@ function preProcessdata( data ) {
             //if uom already exists in the previously prossed data add the observation data under it
             if ( uomLinkList.includes( uomLink ) ) {
 
-                for ( let j = 0; j < processedData.length; j++ ) {
+                for ( let j = 0, l = processedData.length; j < l; j++ ) {
 
                     if ( processedData[ j ].uom == uomLink ) {
 

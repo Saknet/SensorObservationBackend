@@ -59,7 +59,7 @@ async function getUoM( fintourl ) {
             
     const graph = body.graph;
             
-    for ( let i = 0; i < graph.length; i++ ) {
+    for ( let i = 0, len = graph.length; i < len; i++ ) {
         
         if ( 'http://urn.fi/URN:NBN:fi:au:ucum:p1' in graph[ i ] ) {
         

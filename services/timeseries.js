@@ -5,7 +5,7 @@ async function addUoM( data ) {
 
     let dataWithUoM = [];
 
-    for ( let i = 0; i < data.length; i++ ) {
+    for ( let i = 0, len = data.length; i < len; i++ ) {
 
         data[ i ].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[ i ].uom );
         dataWithUoM.push( data[ i ] ); 
@@ -59,18 +59,18 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
     let observationtimes = [ ];
     let timeseries = { uom: unitofmeasurement, timevaluepairs, averages, observationtimes };
 
-    for ( let i = 0; i < timepoints.length; i++ ) {
+    for ( let i = 0, tl = timepoints.length; i < tl; i++ ) {
 
         let count = 0;
         let total = 0;
 
-        for ( let j = 0; j < data.length; j++ ) {
+        for ( let j = 0, dl = data.length; dl; j++ ) {
 
             if ( String( data[ j ].uom ) == unitofmeasurement) {
 
                 let observations = data[ j ].observations;
 
-                for ( let k = 0; k < observations.length; k++ ) {
+                for ( let k = 0; ol = observations.length, k < ol; k++ ) {
 
                     let phenomenontime_begin = observations[ k ].phenomenontime_begin;
 
