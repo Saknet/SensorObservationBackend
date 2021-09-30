@@ -1,35 +1,26 @@
 const unitofmeasurementService = require('./unitofmeasurement');
 
 /* Function that adds unit of measurement value instead of linkeddata to the data  */
-async function addUoM( data ) {
+async function addUoM( data, timepoints ) {
 
-    let dataWithUoM = [];
+    let timeseries = new Object();
 
     for ( let i = 0, len = data.length; i < len; i++ ) {
 
-        data[ i ].uom =  await unitofmeasurementService.getUoMFromFintoApi( data[ i ].uom );
-        dataWithUoM.push( data[ i ] ); 
+        let uom =  await unitofmeasurementService.getUoMFromFintoApi( data[ i ].uom );
+        timeseries[ uom ] = generateTimeseriesForUoM( timepoints, data[ i ].observations, uom );
 
     } 
 
-    return dataWithUoM;
+    return timeseries;
 
 }
 
 /* Function that calls other functions to generate a timeseries for the feature  */
 async function generateTimeseries( data, startTime, endTime ) {
 
-    const dataWithUoM = await addUoM( data );
     const timepoints = generateTimepoints( startTime, endTime );
-
-    let timeseries = new Object();
-    timeseries.w = generateTimeseriesForUoM( timepoints, dataWithUoM, 'watt') ;
-    timeseries.v = generateTimeseriesForUoM( timepoints, dataWithUoM, 'volt' );
-    timeseries.j = generateTimeseriesForUoM( timepoints, dataWithUoM, 'joule' );
-    timeseries.a = generateTimeseriesForUoM( timepoints, dataWithUoM, 'ampère' );
-    timeseries.decibel = generateTimeseriesForUoM( timepoints, dataWithUoM, 'bel sound pressure' );
-    timeseries.degreeCelsius = generateTimeseriesForUoM( timepoints, dataWithUoM, 'degree Celsius' );
-    timeseries.pm = generateTimeseriesForUoM( timepoints, dataWithUoM, 'particulate matter' );
+    const timeseries = await addUoM( data, timepoints );
 
     return timeseries;
 }
@@ -52,7 +43,7 @@ function generateTimepoints( startTime, endTime  ) {
 }
 
 /* Function that generates timeseries for specific unit of measurement  */
-function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
+function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement ) {
 
     let timevaluepairs = [ ];
     let averages = [ ];
@@ -64,24 +55,17 @@ function generateTimeseriesForUoM( timepoints, data, unitofmeasurement ) {
         let count = 0;
         let total = 0;
 
-        for ( let j = 0, dl = data.length; j < dl; j++ ) {
+        for ( let j = 0; ol = observations.length, j < ol; j++ ) {
 
-            if ( String( data[ j ].uom ) == unitofmeasurement) {
+            let phenomenontime_begin = observations[ j ].phenomenontime_begin;
 
-                let observations = data[ j ].observations;
+                if ( phenomenontime_begin.getTime() != null && observations[ j ].result != null && Math.abs( timepoints[ i ] - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
 
-                for ( let k = 0; ol = observations.length, k < ol; k++ ) {
+                    total += Number( observations[ j ].result );
+                    count++;
 
-                    let phenomenontime_begin = observations[ k ].phenomenontime_begin;
-
-                    if ( phenomenontime_begin.getTime() != null && observations[ k ].result != null && Math.abs( timepoints[ i ] - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
-
-                        total += Number( observations[ k ].result );
-                        count++;
-
-                    }
                 }
-            } 
+                
         }
 
         // Only add to timeseries if there is observation results
