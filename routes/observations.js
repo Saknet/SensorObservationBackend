@@ -4,7 +4,7 @@ const observations = require( '../services/observations' );
 router.post( '/', async function( req, res, next ) {
   try {
 
-    res.json( await observations.getMultiple( req.query.page, req.body ) );
+    res.json( await observations.getMultiple( req.body ) );
 
   } catch ( err ) {
 

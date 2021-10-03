@@ -1,19 +1,20 @@
 const dbService = require( './db' );
-const helper = require( '../helper');
-const config = require( '../config' );
 const dataProcessingService = require( './dataProcessing' );
 const timeseriesService = require( './timeseries' );
 
-async function getMultiple( page = 1, body ) {
-
-  const offset = helper.getOffset( page, config.listPerPage );
-  let gmlid = body.gmlid;
-  let startTime = body.start;
-  let endTime = body.end;
+async function getMultiple( body ) {
+  const gmlid = body.gmlid;
+  const startTime = body.start;
+  const endTime = body.end;
+  const ratu = body.RATU;
+  const latitude = body.latitude; 
+  const longitude = body.longitude;
+  let result = null;
+  let observations = [];
 
   if ( startTime == null ) {
 
-    startTime = new Date( Date.now() - 3600000 * 4 );
+    startTime = new Date( Date.now() - 3600000 * 8 );
 
   }
 
@@ -23,27 +24,36 @@ async function getMultiple( page = 1, body ) {
 
   }
 
-  // for testing only remove in production
-  if ( gmlid == null ) {
+  console.log( 'gmlid', gmlid );
+  if ( gmlid ) {
 
-    gmlid = 'BID_4f77b0c3-812f-470b-b305-7c4807e2934f';
+    result = await dbService.query(
+      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
+      [ gmlid, startTime, endTime ]
+    );
 
   }
 
-  const rows = await dbService.query(
-    "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
-    [ gmlid, startTime, endTime ]
-  );
+  if ( !result &&  ratu ) {
+    result = await dbService.query(
+      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'ratu')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
+      [ ratu, startTime, endTime ]
+    );
+  }
 
-  let observations = [];
-  const data = helper.emptyOrRows( rows );
+  if ( !result && latitude && longitude  ) {
+    result = await dbService.query(
+      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'latitude')::text = $1 AND (feature->>'longitude')::text = $2 AND o.phenomenontime_begin BETWEEN $3 AND $4", 
+      [ latitude, longitude, startTime, endTime ]
+    );
+  }
 
-  if ( data.length > 0 ) {
+  if ( result ) {
 
-    const processedData = dataProcessingService.preProcessdata( data );
+    const processedData = dataProcessingService.preProcessdata( result );
     observations = await timeseriesService.generateTimeseries( processedData, startTime, endTime );
 
-  }
+  } 
 
   return {
     observations
