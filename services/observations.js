@@ -24,7 +24,6 @@ async function getMultiple( body ) {
 
   }
 
-  console.log( 'gmlid', gmlid );
   if ( gmlid ) {
 
     result = await dbService.query(
@@ -34,21 +33,21 @@ async function getMultiple( body ) {
 
   }
 
-  if ( !result &&  ratu ) {
+  if ( !result.length &&  ratu ) {
     result = await dbService.query(
       "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'ratu')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
       [ ratu, startTime, endTime ]
     );
   }
 
-  if ( !result && latitude && longitude  ) {
+  if ( !result.length && latitude && longitude  ) {
     result = await dbService.query(
       "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'latitude')::text = $1 AND (feature->>'longitude')::text = $2 AND o.phenomenontime_begin BETWEEN $3 AND $4", 
       [ latitude, longitude, startTime, endTime ]
     );
   }
 
-  if ( result ) {
+  if ( result.length ) {
 
     const processedData = dataProcessingService.preProcessdata( result );
     observations = await timeseriesService.generateTimeseries( processedData, startTime, endTime );
