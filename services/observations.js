@@ -6,10 +6,10 @@ async function getMultiple( body ) {
   const gmlid = body.gmlid;
   const startTime = body.start;
   const endTime = body.end;
-  const ratu = body.RATU;
+  const ratu = body.ratu;
   const latitude = body.latitude; 
   const longitude = body.longitude;
-  let result = null;
+  let result = [];
   let observations = [];
 
   if ( startTime == null ) {
@@ -24,7 +24,15 @@ async function getMultiple( body ) {
 
   }
 
-  if ( gmlid ) {
+  if ( ratu == '56181' ) {
+
+    result = await dbService.queryFVH(
+      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement, o.featureofinterest_id FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null AND o.phenomenontime_begin BETWEEN $1 AND $2", 
+      [ startTime, endTime ]
+    );
+  }
+
+  if ( !result.length && gmlid ) {
 
     result = await dbService.query(
       "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
