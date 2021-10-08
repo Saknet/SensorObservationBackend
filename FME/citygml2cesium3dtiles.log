@@ -1,0 +1,559 @@
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|FME 2020.1.3.0 (20201001 - Build 20632 - WIN64)
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|FME Desktop Trial Edition (node locked-crc)
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|Serial Number: 0
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|Temporary License: 43 days left.
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|Machine host name is: DESKTOP-ORJMQCL
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|START - ProcessID: 13340, peak process memory usage: 37332 kB, current process memory usage: 37224 kB
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `C:/Users/Demo/Github/SensorObservationBackend/FME\wb-xlate-1633452768813_11636' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{931261fa-3401-4442-96ea-d561071e3343}' `LOG_TIMINGS' `Yes'
+2021-10-05 19:52:49|   0.0|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\Demo\AppData\Roaming\Safe Software\FME\'
+2021-10-05 19:52:49|   0.5|  0.4|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;C:\Users\Demo\Documents\FME\Formats
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Shared folders for transformers are : C:\Users\Demo\AppData\Roaming\Safe Software\FME\Packages\20632-win64\transformers;C:\Program Files\FME\transformers;C:\Users\Demo\AppData\Roaming\Safe Software\FME\FME Store\Transformers
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\Demo\Documents\FME\CoordinateSystems
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\Demo\Documents\FME\CoordinateSystemExceptions
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\Demo\Documents\FME\CoordinateSystemGridOverrides
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\Demo\Documents\FME\CsmapTransformationExceptions
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\Demo\Documents\FME\TransformerCategories
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Current working folder is `C:\Users\Demo\Github\SensorObservationBackend\FME'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Users\Demo\AppData\Local\Temp\wbrun_1633375329991_11636\fmetmp_1633452768856_11636', set from environment variable `FME_TEMP'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Users\Demo\Github\SensorObservationBackend\FME/'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'citygml2cesium3dtiles.fmw'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2020.1.3.0'
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|System Status: 38.39 GB of disk space available in the FME temporary folder (C:\Users\Demo\AppData\Local\Temp\wbrun_1633375329991_11636\fmetmp_1633452768856_11636)
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|System Status: 15.96 GB of physical memory available
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|System Status: 31.96 GB of virtual memory available
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 19041)
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Platform: WIN64
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Locale: en_FI
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|System Encoding: windows-1252
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Start freeing memory when the process exceeds 47.87 GB
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|FME Configuration: Stop freeing memory when the process is below 35.90 GB
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Creating writer for format: 
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Creating reader for format: 
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding CITYGML Reader with keyword CITYGML_1
+2021-10-05 19:52:49|   0.5|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2021-10-05 19:52:49|   0.5|  0.1|INFORM|Creating reader for format: CityGML
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|Trying to find a DYNAMIC plugin for reader named `CITYGML'
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|Loaded module 'CITYGML' from file 'C:\Program Files\FME\plugins/CITYGML.dll'
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|FME API version of module 'CITYGML' matches current internal version (3.8 20200115)
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|Opening the CITYGML reader with source dataset 'C:\Users\Demo\FME Data In\ObservationData\2549_6674.gml'
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|Parsing XML document 'C:\Users\Demo\FME Data In\ObservationData\2549_6674.gml'
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|The uri-map document 'C:\Program Files\FME\xml\urimap\gml_aixm.xml' is being used to map from URI to URI
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|The uri-map document 'C:\Program Files\FME\xml\urimap\gml_inspire.xml' is being used to map from URI to URI
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|The uri-map document 'C:\Program Files\FME\xml\urimap\gml_sosi.xml' is being used to map from URI to URI
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|The uri-map document 'C:\Program Files\FME\xml\urimap\gml_urimap.xml' is being used to map from URI to URI
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|The uri-map document 'C:\Program Files\FME\xml\urimap\gml_citygml.xml' is being used to map from URI to URI
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/building/2.0/building.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/building.xsd'
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/building.xsd' ...
+2021-10-05 19:52:49|   0.6|  0.0|INFORM|A <schemaLocation> in the uri-map is overriding the namespace 'http://www.w3.org/1999/xlink' xsd location from '../xlink/xlinks.xsd' to 'xlink.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/cityobjectgroup/2.0/cityObjectGroup.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/cityObjectGroup.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/cityObjectGroup.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/tunnel/2.0/tunnel.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/tunnel.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/tunnel.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/waterbody/2.0/waterBody.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/waterBody.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/waterBody.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/appearance/2.0/appearance.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/appearance.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/appearance.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/cityfurniture/2.0/cityFurniture.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/cityFurniture.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/cityFurniture.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/generics/2.0/generics.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/generics.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/generics.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/bridge/2.0/bridge.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/bridge.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/bridge.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/vegetation/2.0/vegetation.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/vegetation.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/vegetation.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/transportation/2.0/transportation.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/transportation.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/transportation.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/relief/2.0/relief.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/relief.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/relief.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|URI 'http://schemas.opengis.net/citygml/landuse/2.0/landUse.xsd' mapped to 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/landUse.xsd'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Parsing schema document 'file:///C:/Program Files/FME/xml/schemas/CityGML/CityGML/2.0/CityGML/landUse.xsd' ...
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using XSD semantics configuration file 'file:///C:/Program Files/FME/xml/CityGML/CityGML_config.xml'.
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'xlink' for uri 'http://www.w3.org/1999/xlink'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'gml' for uri 'http://www.opengis.net/gml'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'sch' for uri 'http://www.ascc.net/xml/schematron'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'smil20' for uri 'http://www.w3.org/2001/SMIL20/'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'xsi' for uri 'http://www.w3.org/2001/XMLSchema-instance'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'core' for uri 'http://www.opengis.net/citygml/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'smil20lang' for uri 'http://www.w3.org/2001/SMIL20/Language'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'grp' for uri 'http://www.opengis.net/citygml/cityobjectgroup/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'tun' for uri 'http://www.opengis.net/citygml/tunnel/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'bldg' for uri 'http://www.opengis.net/citygml/building/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'xAL' for uri 'urn:oasis:names:tc:ciq:xsdschema:xAL:2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'gen' for uri 'http://www.opengis.net/citygml/generics/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'luse' for uri 'http://www.opengis.net/citygml/landuse/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'app' for uri 'http://www.opengis.net/citygml/appearance/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'dem' for uri 'http://www.opengis.net/citygml/relief/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'veg' for uri 'http://www.opengis.net/citygml/vegetation/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'frn' for uri 'http://www.opengis.net/citygml/cityfurniture/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'wtr' for uri 'http://www.opengis.net/citygml/waterbody/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'brid' for uri 'http://www.opengis.net/citygml/bridge/2.0'
+2021-10-05 19:52:49|   0.7|  0.0|INFORM|Using prefix 'tran' for uri 'http://www.opengis.net/citygml/transportation/2.0'
+2021-10-05 19:52:50|   1.1|  0.4|INFORM|Pre-processing xfMap 'C:\Users\Demo\AppData\Local\Temp\GML_XFMAP_CACHE\CACHED_AUTOGEN_1633452769848_13340.xfmap' with macro stylesheet 'C:\Program Files\FME\xfmap\xfmap_macro.xslt' into 'C:\Users\Demo\AppData\Local\Temp\GML_XFMAP_CACHE\CACHED_AUTOGEN_1633452770323_13340.xfmap'
+2021-10-05 19:52:50|   1.4|  0.3|INFORM|CityGML Reader: Caching xfMap file for subsequent reads 'C:\Users\Demo\AppData\Local\Temp\GML_XFMAP_CACHE\CACHED_AUTOGEN_1633452770323_13340.xfmap'
+2021-10-05 19:52:50|   1.4|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
+2021-10-05 19:52:50|   1.4|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
+2021-10-05 19:52:50|   1.4|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
+2021-10-05 19:52:50|   1.4|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20200115)
+2021-10-05 19:52:50|   1.4|  0.0|INFORM|FME Configuration: Using FME Reprojection Engine
+2021-10-05 19:52:50|   1.4|  0.0|INFORM|The XML Reader is using xfMap 'C:\Users\Demo\AppData\Local\Temp\GML_XFMAP_CACHE\CACHED_AUTOGEN_1633452770323_13340.xfmap'
+2021-10-05 19:52:50|   1.5|  0.0|INFORM|Parsing XML document 'C:\Users\Demo\FME Data In\ObservationData\2549_6674.gml'
+2021-10-05 19:52:52|   3.0|  1.5|INFORM|FME Configuration: Source coordinate system for reader CITYGML_1[CITYGML] set to `EPSG:3879' as read from input data
+2021-10-05 19:52:52|   3.0|  0.0|INFORM|Coordinate System `EPSG:3879' parameters: CS_NAME=`ETRS89.FinGK-25/10_FME' DESC_NM=`ETRS89 / ETRS-GK25FIN 2010' DT_NAME=`ETRS89/01' GROUP=`FINLAND' MAP_SCL=`1' MAX_LAT=`68.9' MAX_LNG=`25.5' MIN_LAT=`60' MIN_LNG=`24.5' PARM1=`25' PROJ=`TM' QUAD=`1' SCL_RED=`1' SOURCE=`EPSG' UNIT=`Meter' X_OFF=`25500000' ZERO_X=`0.001' ZERO_Y=`0.001'
+2021-10-05 19:52:52|   3.3|  0.3|STATS |Storing feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Address -1 6 -1  0  e5d884f65dc5d36f69ae856da5227a8ca047513a.ffsupdating'
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|Creating writer for format: Cesium 3D Tiles
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `CESIUM3DTILES'
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|Loaded module 'CESIUM3DTILES' from file 'C:\Program Files\FME\plugins/CESIUM3DTILES.dll'
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|FME API version of module 'CESIUM3DTILES' matches current internal version (3.8 20200115)
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|FME API version of module 'CESIUM3DTILES' matches current internal version (3.8 20200115)
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|Writer `CESIUM3DTILES_1' of type `CESIUM3DTILES' using group definition keyword `CESIUM3DTILES_1_DEF'
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|FME API version of module 'CESIUM3DTILES' matches current internal version (3.8 20200115)
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|(CESIUM3DTILES_1) Opening a Cesium 3D Tiles writer with dataset 'C:\Users\Demo\FME Data out\ObservationData'
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|CS-MAP Reprojector: Transformation will be automatically selected for 'EPSG:3879' -> 'EPSG:4978', and is not guaranteed to remain the same in future releases of FME
+2021-10-05 19:52:52|   3.3|  0.0|INFORM|Reprojector: Using transformation `ETRS89/01_to_WGS84,Forward(Geocentric)' when reprojecting from EPSG:3879 to EPSG:4978
+2021-10-05 19:52:52|   3.3|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Building -1 4 -1  0  8f655cf986f4bcfc4aa0d2fe93e2c36793b9e649.ffsupdating'
+2021-10-05 19:54:16|  80.6| 77.3|STATS |Storing feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_CityModel -1 2 -1  0  694ef198f7feb6354589ddf85ab8c38efd9899a0.ffsupdating'
+2021-10-05 19:54:16|  80.7|  0.0|INFORM|MULTI_READER(MULTI_READER): Done reading 1844 features from 1 readers
+2021-10-05 19:54:16|  80.7|  0.0|INFORM|Emptying factory pipeline
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 1844 input feature(s), wrote 1844 output feature(s): 203 matched merge filters, 203 were routed to output, 1641 could not be routed.
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 1641 input feature(s) into 0 output feature(s)
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Address_CITYGML_1 Splitter (TeeFactory): Cloned 123 input feature(s) into 123 output feature(s)
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Address_CITYGML_1 Feature Counter -1 10 (TeeFactory): Cloned 123 input feature(s) into 123 output feature(s)
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Building_CITYGML_1 Splitter (TeeFactory): Cloned 79 input feature(s) into 79 output feature(s)
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Building_CITYGML_1 Feature Counter -1 9 (TeeFactory): Cloned 79 input feature(s) into 79 output feature(s)
+2021-10-05 19:54:16|  80.7|  0.0|STATS |Stored 123 feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Address -1 6 -1  0  e5d884f65dc5d36f69ae856da5227a8ca047513a.ffsupdating'
+2021-10-05 19:54:16|  80.7|  0.0|INFORM|Saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Address -1 6 -1  0  e5d884f65dc5d36f69ae856da5227a8ca047513a.fsi'
+2021-10-05 19:54:16|  80.7|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Address -1 6 -1  0  e5d884f65dc5d36f69ae856da5227a8ca047513a.fsi'
+2021-10-05 19:54:20|  85.0|  4.3|STATS |Stored 79 feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Building -1 4 -1  0  8f655cf986f4bcfc4aa0d2fe93e2c36793b9e649.ffsupdating'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Building -1 4 -1  0  8f655cf986f4bcfc4aa0d2fe93e2c36793b9e649.fsi'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Building -1 4 -1  0  8f655cf986f4bcfc4aa0d2fe93e2c36793b9e649.fsi'
+2021-10-05 19:54:20|  85.0|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_CityModel -1 2 -1  0  694ef198f7feb6354589ddf85ab8c38efd9899a0.ffsupdating'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_CityModel -1 2 -1  0  694ef198f7feb6354589ddf85ab8c38efd9899a0.fsi'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_CityModel -1 2 -1  0  694ef198f7feb6354589ddf85ab8c38efd9899a0.fsi'
+2021-10-05 19:54:20|  85.0|  0.0|STATS |CityModel_CITYGML_1 Splitter (TeeFactory): Cloned 1 input feature(s) into 1 output feature(s)
+2021-10-05 19:54:20|  85.0|  0.0|STATS |CityModel_CITYGML_1 Feature Counter -1 8 (TeeFactory): Cloned 1 input feature(s) into 1 output feature(s)
+2021-10-05 19:54:20|  85.0|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 203 input feature(s), wrote 203 output feature(s): 0 matched merge filters, 203 were routed to output, 0 could not be routed.
+2021-10-05 19:54:20|  85.0|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|(CESIUM3DTILES_1) Closing the Cesium 3D Tiles writer with dataset 'C:\Users\Demo\FME Data out\ObservationData'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|(CESIUM3DTILES_1) Finishing writing 3D tileset for feature type 'Building'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Creating writer for format: Cesium Batched 3D Model (B3DM)
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `B3DM'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|Loaded module 'B3DM' from file 'C:\Program Files\FME\plugins/GLTF.dll'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|FME API version of module 'B3DM' matches current internal version (3.8 20200115)
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|FME API version of module 'B3DM' matches current internal version (3.8 20200115)
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|FME API version of module 'B3DM' matches current internal version (3.8 20200115)
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|(W_2) Opening a b3dm writer with dataset 'C:\Users\Demo\FME Data out\ObservationData\Building\data'
+2021-10-05 19:54:20|  85.0|  0.0|INFORM|FME Configuration: Destination coordinate system set to input coordinate system `EPSG:3879'
+2021-10-05 19:54:28|  88.3|  3.3|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|INFORM|Feature output statistics for `CESIUM3DTILES' writer using keyword `CESIUM3DTILES_1':
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |                               Features Written
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Building                                                                   203
+2021-10-05 19:54:28|  88.3|  0.0|STATS |==============================================================================
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Total Features Written                                                     203
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |                            Features Read Summary
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Address                                                                    123
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Building                                                                    79
+2021-10-05 19:54:28|  88.3|  0.0|STATS |CityModel                                                                    1
+2021-10-05 19:54:28|  88.3|  0.0|STATS |GroundSurface                                                               79
+2021-10-05 19:54:28|  88.3|  0.0|STATS |RoofSurface                                                                284
+2021-10-05 19:54:28|  88.3|  0.0|STATS |WallSurface                                                               1278
+2021-10-05 19:54:28|  88.3|  0.0|STATS |==============================================================================
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Total Features Read                                                       1844
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |                           Features Written Summary
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Building                                                                   203
+2021-10-05 19:54:28|  88.3|  0.0|STATS |==============================================================================
+2021-10-05 19:54:28|  88.3|  0.0|STATS |Total Features Written                                                     203
+2021-10-05 19:54:28|  88.3|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~                                                                             ~-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~                                                                             ~-
+2021-10-05 19:54:28|  88.3|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-10-05 19:54:28|  88.3|  0.0|INFORM|Translation was SUCCESSFUL with 7 warning(s) (203 feature(s) output)
+2021-10-05 19:54:28|  88.5|  0.2|INFORM|FME Session Duration: 1 minute 39.6 seconds. (CPU: 55.1s user, 32.8s system)
+2021-10-05 19:54:28|  88.5|  0.0|INFORM|END - ProcessID: 13340, peak process memory usage: 462140 kB, current process memory usage: 198348 kB
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|FME 2020.1.3.0 (20201001 - Build 20632 - WIN64)
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|FME Desktop Trial Edition (node locked-crc)
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|Serial Number: 0
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|Temporary License: 43 days left.
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|Machine host name is: DESKTOP-ORJMQCL
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|START - ProcessID: 15504, peak process memory usage: 36648 kB, current process memory usage: 36540 kB
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `C:/Users/Demo/Github/SensorObservationBackend/FME\wb-xlate-1633453115418_11636' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{09b164d2-0b1d-4fb2-abe8-ddde28816cc2}' `LOG_TIMINGS' `Yes'
+2021-10-05 19:58:35|   0.0|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\Demo\AppData\Roaming\Safe Software\FME\'
+2021-10-05 19:58:36|   0.5|  0.4|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;C:\Users\Demo\Documents\FME\Formats
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Shared folders for transformers are : C:\Users\Demo\AppData\Roaming\Safe Software\FME\Packages\20632-win64\transformers;C:\Program Files\FME\transformers;C:\Users\Demo\AppData\Roaming\Safe Software\FME\FME Store\Transformers
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\Demo\Documents\FME\CoordinateSystems
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\Demo\Documents\FME\CoordinateSystemExceptions
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\Demo\Documents\FME\CoordinateSystemGridOverrides
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\Demo\Documents\FME\CsmapTransformationExceptions
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\Demo\Documents\FME\TransformerCategories
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Current working folder is `C:\Users\Demo\Github\SensorObservationBackend\FME'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Users\Demo\AppData\Local\Temp\wbrun_1633375329991_11636\fmetmp_1633453115473_11636', set from environment variable `FME_TEMP'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Users\Demo\Github\SensorObservationBackend\FME/'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'citygml2cesium3dtiles.fmw'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2020.1.3.0'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|System Status: 38.22 GB of disk space available in the FME temporary folder (C:\Users\Demo\AppData\Local\Temp\wbrun_1633375329991_11636\fmetmp_1633453115473_11636)
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|System Status: 15.96 GB of physical memory available
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|System Status: 31.96 GB of virtual memory available
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 19041)
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Platform: WIN64
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Locale: en_FI
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|System Encoding: windows-1252
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Start freeing memory when the process exceeds 47.87 GB
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME Configuration: Stop freeing memory when the process is below 35.90 GB
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Creating writer for format: 
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Creating reader for format: 
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20200115)
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Loaded module 'HTTPFactory' from file 'C:\Program Files\FME\plugins/HTTPFactory.dll'
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|FME API version of module 'HTTPFactory' matches current internal version (3.8 20200115)
+2021-10-05 19:58:36|   0.5|  0.0|INFORM|Emptying factory pipeline
+2021-10-05 19:58:36|   0.5|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 0 input feature(s), wrote 0 output feature(s): 0 matched merge filters, 0 were routed to output, 0 could not be routed.
+2021-10-05 19:58:36|   0.5|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   0.5|  0.0|STATS |Address_CITYGML_1 Splitter (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   0.5|  0.0|STATS |Address_CITYGML_1 Feature Counter -1 10 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   0.5|  0.0|STATS |Building_CITYGML_1 Splitter (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   0.5|  0.0|STATS |Building_CITYGML_1 Feature Counter -1 14 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   0.5|  0.0|STATS |CityModel_CITYGML_1 Splitter (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   0.5|  0.0|STATS |CityModel_CITYGML_1 Feature Counter -1 8 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:36|   1.0|  0.4|STATS |Restoring 79 feature(s) from FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Building -1 4 -1  0  8f655cf986f4bcfc4aa0d2fe93e2c36793b9e649.ffs'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '0.009618 seconds', total transfer time: '0.072069 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:36|   1.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_HTTPCaller -1 13 fo 0 Output  0  aaf25d4af4cc3953121b8f58099b34100511c707.ffsupdating'
+2021-10-05 19:58:36|   1.0|  0.0|STATS |Restoring 1 feature(s) from FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_CityModel -1 2 -1  0  694ef198f7feb6354589ddf85ab8c38efd9899a0.ffs'
+2021-10-05 19:58:36|   1.0|  0.0|STATS |Restoring 123 feature(s) from FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Address -1 6 -1  0  e5d884f65dc5d36f69ae856da5227a8ca047513a.ffs'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|Creating writer for format: Cesium 3D Tiles
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `CESIUM3DTILES'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|Loaded module 'CESIUM3DTILES' from file 'C:\Program Files\FME\plugins/CESIUM3DTILES.dll'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|FME API version of module 'CESIUM3DTILES' matches current internal version (3.8 20200115)
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|FME API version of module 'CESIUM3DTILES' matches current internal version (3.8 20200115)
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|Writer `CESIUM3DTILES_1' of type `CESIUM3DTILES' using group definition keyword `CESIUM3DTILES_1_DEF'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|FME API version of module 'CESIUM3DTILES' matches current internal version (3.8 20200115)
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|(CESIUM3DTILES_1) Opening a Cesium 3D Tiles writer with dataset 'C:\Users\Demo\FME Data out\ObservationData'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|FME Configuration: Using FME Reprojection Engine
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|CS-MAP Reprojector: Transformation will be automatically selected for 'EPSG:3879' -> 'EPSG:4978', and is not guaranteed to remain the same in future releases of FME
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|Reprojector: Using transformation `ETRS89/01_to_WGS84,Forward(Geocentric)' when reprojecting from EPSG:3879 to EPSG:4978
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|Address_CITYGML_1_-1_10_Player (RecorderFactory): Played back 123 feature(s) from file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Address -1 6 -1  0  e5d884f65dc5d36f69ae856da5227a8ca047513a.ffs'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|CityModel_CITYGML_1_-1_8_Player (RecorderFactory): Played back 1 feature(s) from file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_CityModel -1 2 -1  0  694ef198f7feb6354589ddf85ab8c38efd9899a0.ffs'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '4.9e-5 seconds', total transfer time: '0.012628 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:36|   1.0|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.009937 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.011971 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.009744 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:36|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.6e-5 seconds', total transfer time: '0.009753 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.00971 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009589 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.010147 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.5e-5 seconds', total transfer time: '0.009866 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.1|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.009829 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.011593 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.3e-5 seconds', total transfer time: '0.010072 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.2e-5 seconds', total transfer time: '0.009978 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.009932 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.3e-5 seconds', total transfer time: '0.009682 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.01561 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.5e-5 seconds', total transfer time: '0.009312 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.009776 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.8e-5 seconds', total transfer time: '0.00948 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.2e-5 seconds', total transfer time: '0.010496 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.010498 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.2|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.8e-5 seconds', total transfer time: '0.012374 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.010323 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.010429 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.009928 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.6e-5 seconds', total transfer time: '0.010227 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.01017 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009814 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.2e-5 seconds', total transfer time: '0.012197 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.014088 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.011188 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.009688 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3e-5 seconds', total transfer time: '0.009643 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.8e-5 seconds', total transfer time: '0.009498 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.2e-5 seconds', total transfer time: '0.012282 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009983 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.224942 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.012073 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009531 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.009727 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.011966 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.009323 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.5e-5 seconds', total transfer time: '0.00916 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009052 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.010657 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '4.4e-5 seconds', total transfer time: '0.009576 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.011385 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.009421 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.009401 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.009677 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.8e-5 seconds', total transfer time: '0.009677 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.1e-5 seconds', total transfer time: '0.011466 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.013797 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.014466 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.009111 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.3|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3e-5 seconds', total transfer time: '0.009385 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.7e-5 seconds', total transfer time: '0.008773 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.6e-5 seconds', total transfer time: '0.009683 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.9e-5 seconds', total transfer time: '0.009375 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:37|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.3e-5 seconds', total transfer time: '0.013059 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.8e-5 seconds', total transfer time: '0.011379 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.2e-5 seconds', total transfer time: '0.009624 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.8e-5 seconds', total transfer time: '0.011851 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.011836 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.009644 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.009608 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009716 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.4e-5 seconds', total transfer time: '0.009775 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '3.6e-5 seconds', total transfer time: '0.011663 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.2e-5 seconds', total transfer time: '0.009786 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.3e-5 seconds', total transfer time: '0.009936 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.009752 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.4|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.2e-5 seconds', total transfer time: '0.011797 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.009634 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2e-5 seconds', total transfer time: '0.011488 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.010425 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '2.1e-5 seconds', total transfer time: '0.012143 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): Starting HTTP download from 'geo.fvh.fi'. Expected transfer size: 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP Download: received 6752 bytes
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|HTTPCaller (HTTPFactory): HTTP transfer summary - status code: 200, download size: '6752 bytes', DNS lookup time: '1.9e-5 seconds', total transfer time: '0.011695 seconds', url: 'https://geo.fvh.fi/observationdata/features'
+2021-10-05 19:58:38|   1.5|  0.0|INFORM|Building_CITYGML_1_-1_14_Player (RecorderFactory): Played back 79 feature(s) from file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_Building -1 4 -1  0  8f655cf986f4bcfc4aa0d2fe93e2c36793b9e649.ffs'
+2021-10-05 19:58:42|   5.8|  4.4|STATS |Stored 79 feature(s) to FME feature store file `C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_HTTPCaller -1 13 fo 0 Output  0  aaf25d4af4cc3953121b8f58099b34100511c707.ffsupdating'
+2021-10-05 19:58:42|   5.8|  0.0|INFORM|Saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_HTTPCaller -1 13 fo 0 Output  0  aaf25d4af4cc3953121b8f58099b34100511c707.fsi'
+2021-10-05 19:58:42|   5.8|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\Demo\AppData\Local\Temp\wb-cache--IDEFpP\Main_HTTPCaller -1 13 fo 0 Output  0  aaf25d4af4cc3953121b8f58099b34100511c707.fsi'
+2021-10-05 19:58:42|   5.8|  0.0|STATS |HTTPCaller_Output Feature Counter -1 15 (TeeFactory): Cloned 79 input feature(s) into 79 output feature(s)
+2021-10-05 19:58:42|   5.8|  0.0|STATS |HTTPCaller_<REJECTED> Feature Counter -1 2147680269 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:42|   5.8|  0.0|STATS |HTTPCaller_<Rejected> (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:42|   5.8|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 203 input feature(s), wrote 203 output feature(s): 0 matched merge filters, 203 were routed to output, 0 could not be routed.
+2021-10-05 19:58:42|   5.8|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-10-05 19:58:42|   5.8|  0.0|INFORM|(CESIUM3DTILES_1) Closing the Cesium 3D Tiles writer with dataset 'C:\Users\Demo\FME Data out\ObservationData'
+2021-10-05 19:58:42|   5.8|  0.0|INFORM|(CESIUM3DTILES_1) Finishing writing 3D tileset for feature type 'Building'
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|Creating writer for format: Cesium Batched 3D Model (B3DM)
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `B3DM'
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|Loaded module 'B3DM' from file 'C:\Program Files\FME\plugins/GLTF.dll'
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|FME API version of module 'B3DM' matches current internal version (3.8 20200115)
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|FME API version of module 'B3DM' matches current internal version (3.8 20200115)
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|FME API version of module 'B3DM' matches current internal version (3.8 20200115)
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|(W_2) Opening a b3dm writer with dataset 'C:\Users\Demo\FME Data out\ObservationData\Building\data'
+2021-10-05 19:58:42|   5.9|  0.0|INFORM|FME Configuration: Destination coordinate system set to input coordinate system `EPSG:3879'
+2021-10-05 19:58:49|   8.9|  3.0|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|INFORM|Feature output statistics for `CESIUM3DTILES' writer using keyword `CESIUM3DTILES_1':
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |                               Features Written
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |Building                                                                   203
+2021-10-05 19:58:49|   8.9|  0.0|STATS |==============================================================================
+2021-10-05 19:58:49|   8.9|  0.0|STATS |Total Features Written                                                     203
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |                            Features Read Summary
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |==============================================================================
+2021-10-05 19:58:49|   8.9|  0.0|STATS |Total Features Read                                                          0
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |                           Features Written Summary
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|STATS |Building                                                                   203
+2021-10-05 19:58:49|   8.9|  0.0|STATS |==============================================================================
+2021-10-05 19:58:49|   8.9|  0.0|STATS |Total Features Written                                                     203
+2021-10-05 19:58:49|   8.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~                                                                             ~-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~                                                                             ~-
+2021-10-05 19:58:49|   8.9|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-10-05 19:58:49|   8.9|  0.0|INFORM|Translation was SUCCESSFUL with 7 warning(s) (203 feature(s) output)
+2021-10-05 19:58:50|   9.1|  0.2|INFORM|FME Session Duration: 14.4 seconds. (CPU: 4.5s user, 4.0s system)
+2021-10-05 19:58:50|   9.1|  0.0|INFORM|END - ProcessID: 15504, peak process memory usage: 364616 kB, current process memory usage: 100348 kB
