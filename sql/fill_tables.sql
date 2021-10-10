@@ -82,7 +82,7 @@ INSERT INTO featureofinterest (name, description, feature)
 VALUES('Capellan Puistotie 8', 'apartment building', '{ "gmlid": "BID_84c0879b-667d-4052-b22c-870ed33a4005", "ratu": "58892", "vtj-prt": "103305567M", "coordinates": [60.184624240154385, 24.982310077421175] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Capellan Puistotie 10', 'apartment building', '{ "gmlid": "BID_95c19986-26fe-47ea-8181-469586a18581", "ratu": "59086", "vtj-prt": "103423483C", "coordinates": [60.18402344568273, 24.98206035135864 }');
+VALUES('Capellan Puistotie 10', 'apartment building', '{ "gmlid": "BID_95c19986-26fe-47ea-8181-469586a18581", "ratu": "59086", "vtj-prt": "103423483C", "coordinates": [60.18402344568273, 24.98206035135864] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('Polariksenkatu 9', 'apartment building', '{ "gmlid": "BID_63ed77d0-d840-4d64-8de4-9df4b004416e", "ratu": "66213", "vtj-prt": "1036517561", "coordinates": [60.18377792056886, 24.981125069931377] }');
