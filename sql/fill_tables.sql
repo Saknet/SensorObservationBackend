@@ -44,13 +44,13 @@ INSERT INTO featureofinterest (name, description, feature)
 VALUES('Pasteurinkatu 1', 'Hoas apartment building', '{ "gmlid": "BID_48605c90-e5e9-46a7-9255-9884865508d3", "ratu": "51823", "vtj-prt": "103126973J", "coordinates": [60.22459644697701, 25.014326770514675] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Pasteurinkatu 1', 'Hoas apartment building', '{ "gmlid": "BID_c4d319db-2f94-44f6-a0e0-966053a23e4b", "ratu": "51822", "vtj-prt": "103126972H", "coordinates": [60.22458285180498, 25.013623619257693] }');
+VALUES('Pasteurinkatu 1', 'Hoas apartment building', '{ "gmlid": "BID_c63647d4-0aea-41b3-a71a-6247fbdf88d8", "ratu": "51822", "vtj-prt": "103126972H", "coordinates": [60.22458285180498, 25.013623619257693] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Pasteurinkatu 1', 'Hoas apartment building', '{ "gmlid": "BID_c4d319db-2f94-44f6-a0e0-966053a23e4b", "ratu": "51821", "vtj-prt": "103126971F", "coordinates": [60.22464960839552, 25.01300654496274] }');
+VALUES('Pasteurinkatu 1', 'Hoas apartment building', '{ "gmlid": "BID_4264ce16-4964-4e89-b838-3fdc1b197115", "ratu": "51821", "vtj-prt": "103126971F", "coordinates": [60.22464960839552, 25.01300654496274] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Arcturuksenkatu 6', 'Hoas apartment building', '{ "gmlid": "BID_059d0a21-a2a7-4aa5-b427-2975517f09ba", "ratu": "62413", "vtj-prt": "102821537S", "coordinates": [60.18350545990462, 24.980731448696897] }');
+VALUES('Arcturuksenkatu 6', 'Apartment building', '{ "gmlid": "BID_059d0a21-a2a7-4aa5-b427-2975517f09ba", "ratu": "62413", "vtj-prt": "102821537S", "coordinates": [60.18350545990462, 24.980731448696897] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('Koetilantie 1', 'Gardenia', '{ "gmlid": "BID_44e21d7d-3d6a-40f4-9b1d-0449f727684e", "ratu": "43970", "vtj-prt": "103126975L", "coordinates": [60.22398093600276, 25.015015309527623] }');
