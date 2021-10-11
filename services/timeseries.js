@@ -55,7 +55,7 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
         let count = 0;
         let total = 0;
 
-        for ( let j = 0; ol = observations.length, j < ol; j++ ) {
+        for ( let j = 0, ol = observations.length; j < ol; j++ ) {
 
             let phenomenontime_begin = observations[ j ].phenomenontime_begin;
 
