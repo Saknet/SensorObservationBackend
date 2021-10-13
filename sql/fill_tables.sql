@@ -1,5 +1,5 @@
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Työpajankatu 17a', 'lumo one redi tower 3', '{ "height": "120", "gmlid": "BID_3593141b-e49f-4aac-aa8b-ff663df696b5", "ratu": "68654", "coordinates": [60.18765513370254, 24.978827621692176] }');
+VALUES('Työpajankatu 17a', 'lumo one redi tower 3, false height', '{ "height": "60", "gmlid": "BID_3593141b-e49f-4aac-aa8b-ff663df696b5", "ratu": "68654", "coordinates": [60.18765513370254, 24.978827621692176] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('Kalasatamankatu 9', 'majakka redi tower 1', '{ "height": "134", "gmlid": "BID_4f77b0c3-812f-470b-b305-7c4807e2934f", "ratu": "68654", "coordinates": [60.1874922366134, 24.97969281175711] }');
@@ -17,13 +17,13 @@ INSERT INTO featureofinterest (name, description, feature)
 VALUES('Capellan Puistotie 13', 'Helsingin Harjus', '{ "height": "50.5", "gmlid": "BID_28a105c7-0695-49d3-ab90-c2ec7667fb03", "ratu": "65736", "vtj-prt": "103635712F", "coordinates": [60.18783115602715, 24.98238965903427] }');
 
 INSERT INTO featureofinterest(name, description, feature) 
-VALUES('Capellanranta 3', 'apartment building', '{  "height": "49.6", "gmlid": "BID_1303d8da-6736-4749-9262-3ebd5acc9d4d", "ratu": "66279", "vtj-prt": "103655374R", "coordinates": [60.18861689071932, 24.98528017602082] }');
+VALUES('Capellanranta 3', 'apartment building false height', '{  "height": "30", "gmlid": "BID_1303d8da-6736-4749-9262-3ebd5acc9d4d", "ratu": "66279", "vtj-prt": "103655374R", "coordinates": [60.188621233632176, 24.985541853578116] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Polariksenkatu 1', 'daycare', '{ "height": "9", "gmlid": "BID_13923f39-b605-4f81-9173-c14c21630685", "ratu": "61059", "coordinates": [60.18376024777178, 24.979743747461374] }');
+VALUES('Polariksenkatu 1', 'school', '{ "height": "15.73", "gmlid": "BID_13923f39-b605-4f81-9173-c14c21630685", "ratu": "61059", "coordinates": [60.18376024777178, 24.979743747461374] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
-VALUES('Polariksenkatu 1', 'school', '{ "height": "15.73", "gmlid": "BID_0f7ae73a-0cd8-4fb8-8f79-fb3caa6c79af", "ratu": "61059", "coordinates": [60.18424613685863, 24.979216087806908] }');
+VALUES('Koetilantie 1 B', 'office', '{ "height": "8.01", "gmlid": "BID_7fc06be5-6024-4b33-bb0c-ba6e5c9fdd99", "ratu": "43971", "vtj-prt": "103655374R", "coordinates": [60.22442713412172, 25.016287263575478] }');
 
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('Työpajankatu 14', 'health center', '{ "height": "31.1", "gmlid": "BID_3224c543-6e8e-4e0d-a828-ca0742564036", "ratu": "63640", "vtj-prt": "103526938M", "coordinates": [60.18795435502556, 24.980628020416525] }');
