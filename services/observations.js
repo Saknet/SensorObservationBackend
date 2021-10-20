@@ -24,21 +24,12 @@ async function getMultiple( body ) {
 
   }
 
-  if ( ratu == '56181' ) {
+  if ( ratu == '56181' || gmlid == 'BID_a03c680b-a156-473d-b210-ae261d808ebf' ) {
 
     result = await dbService.queryFVH(
       "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement, o.featureofinterest_id FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null AND o.phenomenontime_begin BETWEEN $1 AND $2", 
       [ startTime, endTime ]
     );
-  }
-
-  if ( !result.length && gmlid ) {
-
-    result = await dbService.query(
-      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
-      [ gmlid, startTime, endTime ]
-    );
-
   }
 
   if ( !result.length &&  ratu ) {
@@ -53,6 +44,15 @@ async function getMultiple( body ) {
       "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'latitude')::text = $1 AND (feature->>'longitude')::text = $2 AND o.phenomenontime_begin BETWEEN $3 AND $4", 
       [ latitude, longitude, startTime, endTime ]
     );
+  }
+
+  if ( !result.length && gmlid ) {
+
+    result = await dbService.query(
+      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE (feature->>'gmlid')::text = $1 AND o.phenomenontime_begin BETWEEN $2 AND $3", 
+      [ gmlid, startTime, endTime ]
+    );
+
   }
 
   if ( result.length ) {
