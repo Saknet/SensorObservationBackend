@@ -77,5 +77,6 @@ async function getUoM( fintourl ) {
 }
 
 module.exports = {
-    getUoMFromFintoApi
+    getUoMFromFintoApi,
+    preProcessApiLink
 };

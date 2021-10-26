@@ -17,7 +17,6 @@ describe( "Pre processing data", () => {
 
         testdata = generateTestData( startTime, n, startHours - endHours, uomlist );
         processedData = preProcessdata( testdata );
-        console.log( "processedData", processedData );
     });
 
     test( 'Random values', () => {
