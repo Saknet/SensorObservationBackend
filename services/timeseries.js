@@ -46,7 +46,7 @@ function generateTimepoints( startTime, endTime  ) {
 /* Function that generates timeseries for specific unit of measurement  */
 function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement ) {
 
-    let timeseries;
+    let timeseries = { uom: unitofmeasurement, timevaluepairs: [], averages: [], observationtimes: [] };
 
     for ( let i = 0, tl = timepoints.length; i < tl; i++ ) {
 
@@ -57,7 +57,7 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
         // Only add to timeseries if there is observation results
         if ( count > 0 ) {
 
-            timeseries = addDataToTimeseries( timepoints[ i ], { uom: unitofmeasurement, timevaluepairs: [], averages: [], observationtimes: [] }, total, count  );
+            timeseries = addDataToTimeseries( timepoints[ i ], timeseries, total, count  );
         
         }
 

@@ -1,4 +1,4 @@
-const { generateTimepoints, countObservationResults, addDataToTimeseries } = require('../services/timeseries');
+const { generateTimepoints, countObservationResults, addDataToTimeseries } = require( '../services/timeseries' );
 const defaultStartTime = new Date( Date.now() - 3600000 * 8 );
 const defaultEndTime = new Date( Date.now() );
 
@@ -19,13 +19,13 @@ describe( "Timepoints generation", () => {
         defaultTimepoints = generateTimepoints( defaultStartTime, defaultEndTime );
     });
 
-    test( 'Default values', async () => {
+    test( 'Default values', () => {
         expect( defaultTimepoints ).toHaveLength( 8 )
         expect( defaultTimepoints ).toContain( new Date( defaultStartTime ).getTime() / 1000 + 1800 )
         expect( defaultTimepoints ).toContain( new Date( defaultStartTime ).getTime() / 1000 + 1800 + 3600 * 5 )
     } )
 
-    test( 'Random values', async () => {
+    test( 'Random values', () => {
         expect( timepoints ).toHaveLength( startHours - endHours )
         expect( timepoints ).toContain( new Date( startTime ).getTime() / 1000 + 1800 + 3600 * 2 )
         expect( timepoints ).toContain( new Date( startTime ).getTime() / 1000 + 1800 + 3600 * ( startHours - endHours - 1 ) )
@@ -48,7 +48,7 @@ describe( "Add data to timeseries", () => {
         timepoints = generateTimepoints( startTime, endTime );
     });
 
-    test( 'With random dates', async () => {
+    test( 'With random dates', () => {
         const timeseries = addDataToTimeseries( timepoints[ index ], { uom: 'joule', timevaluepairs: [], averages: [], observationtimes: [] }, 5555, 4 );
         expect( timeseries ).toHaveProperty( 'averages', [1388.75] )
         expect( timeseries ).toHaveProperty( 'uom', 'joule' )
@@ -72,7 +72,7 @@ describe('count observation results', () => {
         timepoints = generateTimepoints( startTime, endTime );
     });
 
-    test( 'With random dates and data', async () => {
+    test( 'With random dates and data', () => {
 
         for ( let i = 0, len = timepoints.length; i < len; i++ ) {
             let value = Math.floor( Math.random() * 1000 );
