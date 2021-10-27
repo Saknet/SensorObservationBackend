@@ -6,7 +6,7 @@
   "scripts": {
     "pm2": "pm2 start processes.json --no-daemon",
     "start": "node ./bin/www",
-    "test": "jest --verbose",
+    "test": "jest",
     "coverage": "jest --coverage",
     "lint": "eslint ."
   },
@@ -42,9 +42,7 @@
     "eslint": "^7.32.0",
     "jest": "^27.3.1",
     "jest-cli": "^27.3.1",
+    "redis-mock": "^0.56.3",
     "supertest": "^6.1.6"
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }

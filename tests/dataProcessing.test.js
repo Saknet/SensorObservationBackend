@@ -1,7 +1,9 @@
 const { preProcessdata } = require( '../services/dataProcessing' );
+const { generateTestData } = require( './testdatageneration' );
 
 describe( "Pre processing data", () => {
     let testdata;
+    let processedData;
     let endHours;
     let startTime;
     let startHours;    
@@ -15,7 +17,7 @@ describe( "Pre processing data", () => {
         startTime = new Date( Date.now() - 3600000 * startHours );
         n = ( startHours - endHours ) * 100;
 
-        testdata = generateTestData( startTime, n, startHours - endHours, uomlist );
+        testdata = generateTestData( startTime.getTime(), n, startHours - endHours, uomlist );
         processedData = preProcessdata( testdata );
     });
 
@@ -29,20 +31,3 @@ describe( "Pre processing data", () => {
     } )
     
 })
-
-function generateTestData( startTime, n, hours, uomlist ) {
-    let observations = [];
-
-    for ( let i = 0, len = n; i < len; i++ ) {
-        let generated = Math.floor( Math.random() * 7 );
-        let unitofmeasurement = uomlist[ generated ];
-        let result = Math.floor( Math.random() * 501 );
-        let randomTime = Math.floor( Math.random() * 3600000 * hours );
-        let phenomenontime_begin = new Date(  startTime  + randomTime );
-        let row = { unitofmeasurement: unitofmeasurement, phenomenontime_begin: phenomenontime_begin, result: result }
-        observations.push( row );
-    }
-
-    return observations;
-
-}
