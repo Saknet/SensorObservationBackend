@@ -267,8 +267,9 @@ describe('generate timeseries', () => {
         expect( timeseries ).toHaveProperty( 'watt' );
         expect( timeseries ).toHaveProperty( [ 'watt', 'averages' ] );
         expect( timeseries ).toHaveProperty( [ 'watt', 'observationtimes' ] );
-        expect( timeseries[ 'watt' ].observationtimes.length ).toBeGreaterThan( 1 );
-        expect( timeseries[ 'watt' ].averages.length ).toBeGreaterThan( 1 );
+        expect( timeseries[ 'watt' ].observationtimes.length ).toEqual( timeseries[ 'watt' ].averages.length );
+        expect( timeseries[ 'watt' ].observationtimes.length ).toEqual( startHours - endHours );
+        expect( timeseries[ 'watt' ].averages.length ).toEqual( startHours - endHours );
 
     } )
 
