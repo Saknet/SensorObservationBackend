@@ -19,6 +19,7 @@ async function addUoM( data, timepoints ) {
 /* Function that calls other functions to generate a timeseries for the feature  */
 async function generateTimeseries( data, startTime, endTime ) {
 
+    let timepointsStarted = new Date( Date.now() );
     const timepoints = generateTimepoints( startTime, endTime );
     const timeseries = await addUoM( data, timepoints );
 
@@ -57,8 +58,8 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
         // Only add to timeseries if there is observation results
         if ( count > 0 ) {
 
-            timeseries = addDataToTimeseries( timepoints[ i ], timeseries, total, count  );
-        
+            timeseries = addDataToTimeseries( timepoints[ i ], timeseries, total, count );
+
         }
 
     }  
@@ -73,9 +74,9 @@ function countObservationResults( observations, time ) {
     let count = 0;
     let total = 0;
 
-    for ( let i = 0, ol = observations.length; i < ol; i++ ) {
+/*     for ( let i = 0, ol = observations.length; i < ol; i++ ) {
 
-        let phenomenontime_begin = observations[ i ].phenomenontime_begin;
+        let phenomenontime_begin = new Date( observations[ i ].phenomenontime_begin );
 
             if ( phenomenontime_begin.getTime() != null && observations[ i ].result != null && Math.abs( time - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
 
@@ -84,6 +85,20 @@ function countObservationResults( observations, time ) {
 
             }
             
+    }
+ */
+    let i = observations.length;
+    while ( i-- ) {
+        let phenomenontime_begin = new Date( observations[ i ].phenomenontime_begin );
+
+        if ( phenomenontime_begin.getTime() != null && observations[ i ].result != null && Math.abs( time - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
+
+            total += Number( observations[ i ].result );
+            count++;
+            observations.splice( i, 1 ); 
+
+        }
+
     }
 
     return [ count, total ];
@@ -96,8 +111,8 @@ function addDataToTimeseries( timepoint, timeseries,  total, count  ) {
     let time = new Date();
     time.setTime( timepoint * 1000 )
     let average = total / count;
-    let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: average, observationscount: count };
-    timeseries.timevaluepairs.push( timevaluepair );
+//    let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: average, observationscount: count };
+//    timeseries.timevaluepairs.push( timevaluepair );
     timeseries.averages.push( average );
     timeseries.observationtimes.push( time.toLocaleString( 'fi-FI', { timeZone: 'Europe/Helsinki' } ) );
 
