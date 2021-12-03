@@ -47,8 +47,24 @@ function generateTimepoints( startTime, endTime  ) {
 /* Function that generates timeseries for specific unit of measurement  */
 function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement ) {
 
-    let timeseries = { uom: unitofmeasurement, timevaluepairs: [], averages: [], observationtimes: [] };
+    let timeseries = { uom: unitofmeasurement, averages: [], observationtimes: [] };
 
+    let i = timepoints.length;
+    while ( i-- ) {
+
+        const observationResults = countObservationResults( observations, timepoints[ i ] );
+        const count = observationResults[ 0 ];
+        const total = observationResults[ 1 ];
+
+        // Only add to timeseries if there is observation results
+        if ( count > 0 ) {
+
+            timeseries = addDataToTimeseries( timepoints[ i ], timeseries, total, count );
+
+        }
+
+    }
+/* 
     for ( let i = 0, tl = timepoints.length; i < tl; i++ ) {
 
         const observationResults = countObservationResults( observations, timepoints[ i ] );
@@ -62,7 +78,7 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
 
         }
 
-    }  
+    } */  
     
     return timeseries;
 
@@ -89,9 +105,8 @@ function countObservationResults( observations, time ) {
  */
     let i = observations.length;
     while ( i-- ) {
-        let phenomenontime_begin = new Date( observations[ i ].phenomenontime_begin );
 
-        if ( phenomenontime_begin.getTime() != null && observations[ i ].result != null && Math.abs( time - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
+        if ( observations[ i ].result != null && Math.abs( time - ( new Date( observations[ i ].phenomenontime_begin ).getTime() / 1000 ) ) <= 1800 ) {
 
             total += Number( observations[ i ].result );
             count++;
