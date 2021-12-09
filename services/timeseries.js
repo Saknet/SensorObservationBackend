@@ -64,21 +64,6 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
 
     let timeseries = { uom: unitofmeasurement, averages: [], observationtimes: [] };
     addDataToTimeseries( timeValuePairs, timepoints, timeseries );
-/* 
-    for ( let i = 0, tl = timepoints.length; i < tl; i++ ) {
-
-        const observationResults = countObservationResults( observations, timepoints[ i ] );
-        const count = observationResults[ 0 ];
-        const total = observationResults[ 1 ];
-
-        // Only add to timeseries if there is observation results
-        if ( count > 0 ) {
-
-            timeseries = addDataToTimeseries( timepoints[ i ], timeseries, total, count );
-
-        }
-
-    } */  
     
     return timeseries;
 
@@ -89,24 +74,11 @@ function countObservationResults( observations, time ) {
 
     let count = 0;
     let total = 0;
-
-/*     for ( let i = 0, ol = observations.length; i < ol; i++ ) {
-
-        let phenomenontime_begin = new Date( observations[ i ].phenomenontime_begin );
-
-            if ( phenomenontime_begin.getTime() != null && observations[ i ].result != null && Math.abs( time - ( phenomenontime_begin.getTime() / 1000 ) ) <= 1800 ) {
-
-                total += Number( observations[ i ].result );
-                count++;
-
-            }
-            
-    }
- */
     let i = observations.length;
+
     while ( i-- ) {
 
-        if ( observations[ i ].result != null && Math.abs( time - ( new Date( observations[ i ].time ).getTime() ) ) <= 1800000 ) {
+        if ( Math.abs( time - ( new Date( observations[ i ].time ).getTime() ) ) <= 1800000 ) {
 
             total += Number( observations[ i ].result );
             count++;
@@ -130,16 +102,12 @@ function addDataToTimeseries( timeValuePairs, timepoints, timeseries ) {
         if ( value ) {
 
             let time = new Date( timepoints[ i ] );
-            let average = value[ 1 ] / value[ 0 ];
-            timeseries.averages.push( average );
+            timeseries.averages.push( value[ 1 ] / value[ 0 ] );
             timeseries.observationtimes.push( time.toLocaleString( 'fi-FI', { timeZone: 'Europe/Helsinki' } ) );
 
         }
 
     }
-
-    //    let timevaluepair = { time: timepoint, totalvalue: total, averagevalue: average, observationscount: count };
-    //    timeseries.timevaluepairs.push( timevaluepair );
 
     return timeseries;
 
