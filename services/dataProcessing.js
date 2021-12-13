@@ -8,7 +8,7 @@ function preProcessdata( data ) {
     for ( let i = 0, len = data.length; i < len; i++ ) {
 
         //check if there is linked uom data on row that has observation time and value
-        if ( String( data[ i ].unitofmeasurement ).startsWith( 'http' ) && data[ i ].phenomenontime_begin != null && data[ i ].result != null ) {
+        if ( String( data[ i ].unitofmeasurement ).startsWith( 'http' ) && data[ i ].time != null && data[ i ].result != null ) {
 
             let uomLink = data[ i ].unitofmeasurement;
 

@@ -12,12 +12,10 @@ async function getMultiple( body ) {
   let result = [];
   let observations = [];
 
-  console.log( 'startTime', startTime );
-  console.log('endTime ', endTime );
 
   if ( startTime == null ) {
 
-    startTime = new Date( Date.now() - 3600000 * 8 );
+    startTime = new Date( Date.now() - 3600000 * 8 - 1800000 );
 
   }
 

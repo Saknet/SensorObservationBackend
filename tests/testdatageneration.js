@@ -5,8 +5,8 @@ function generateObservationDataForDates( timepoint, n ) {
     for ( let i = 0, len = n; i < len; i++ ) {
         let generated = -1800 + Math.floor( Math.random() * 3601 );
         let value = Math.floor( Math.random() * 100 );
-        let time = new Date( ( timepoint + generated ) * 1000 );
-        observationsData = { phenomenontime_begin: time, result: value }
+        let time = new Date( ( timepoint + generated ) );
+        observationsData = { time: time, result: value }
         observations.push( observationsData );
         total += value;
 
@@ -25,7 +25,7 @@ function generateTestData( startTime, n, hours, uomlist ) {
         let result = Math.floor( Math.random() * 501 );
         let randomTime = Math.floor( Math.random() * 3600000 * hours );
         let phenomenontime_begin = new Date(  startTime  + randomTime );
-        let row = { unitofmeasurement: unitofmeasurement, phenomenontime_begin: phenomenontime_begin, result: result }
+        let row = { unitofmeasurement: unitofmeasurement, time: phenomenontime_begin, result: result }
         observations.push( row );
     }
 

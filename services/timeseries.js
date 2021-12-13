@@ -35,7 +35,7 @@ function generateTimepoints( startTime, endTime  ) {
     const pointone = firstTime + 1800000;
     timepoints.push( pointone );
 
-    for ( let i = pointone + 3600000; i < lastTime; i += 3600000 )  {
+    for ( let i = pointone + 3600000; i <= lastTime; i += 3600000 )  {
         timepoints.push( i );
     } 
     
