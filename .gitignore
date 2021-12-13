@@ -1,5 +1,6 @@
 .env
 .git
 .dockerignore
+coverage/
 node_modules/
 npm-debug.log/
