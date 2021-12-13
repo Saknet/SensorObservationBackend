@@ -80,8 +80,7 @@ function countObservationResults( observations, time ) {
 
         if ( Math.abs( time - ( Date.parse( observations[ i ].time ) ) ) <= 1800000 ) {
 
-            let r = +observations[ i ].result;
-            total += r;
+            total += Number( observations[ i ].result );
             count++;
             observations.splice( i, 1 ); 
 
