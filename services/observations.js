@@ -1,7 +1,13 @@
 const dbService = require( './db' );
-const dataProcessingService = require( './dataProcessing' );
 const timeseriesService = require( './timeseries' );
 
+/** 
+ * Retrives observation data matching the parameters found in the request body from a database 
+ * and calls timeseries service to create timeseries for the found data.
+ * 
+ * @param { object } body of a request from frontend
+ * @return { object } timeseries generated
+ */
 async function getMultiple( body ) {
   const gmlid = body.gmlid;
   const startTime = body.start;
@@ -10,8 +16,7 @@ async function getMultiple( body ) {
   const latitude = body.latitude; 
   const longitude = body.longitude;
   let result = [];
-  let observations = [];
-
+  let timeseries = [];
 
   if ( startTime == null ) {
 
@@ -65,13 +70,13 @@ async function getMultiple( body ) {
   if ( result.length ) {
     
 //    let timeserviceStarted = new Date( Date.now() );
-    observations = await timeseriesService.generateTimeseries( result, startTime, endTime );
+    timeseries = await timeseriesService.generateTimeseries( result, startTime, endTime );
 //    console.log( 'timespent timeseries', new Date( Date.now() ) - timeserviceStarted, ' ms' );
  
   } 
 
   return {
-    observations
+    timeseries
   }
 }
 

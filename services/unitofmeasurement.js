@@ -9,6 +9,13 @@ client.on( "Redis error" , ( err ) => {
     console.log( err );
 })
 
+/** 
+ * Calls other functions need to retrive uom from Finto API
+ * 
+ * @param { Map<number, Array<number>> } timeValuePairs map containg observation result time-value pairs and count of observations
+ * @param { Array<number> } timepoints generated timepoints between startTime and endTime in unix time
+ * @param { object } timeseries without results
+ */
 function getUoMFromFintoApi ( link ) {
 
     const url = preProcessApiLink( link );

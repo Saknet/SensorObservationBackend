@@ -1,7 +1,14 @@
 const unitofmeasurementService = require('./unitofmeasurement');
 
-/* Function that adds unit of measurement value instead of linkeddata to the data  */
-async function addUoM( data, timepoints ) {
+/** 
+ * Creates the timeseries. First uses unitofmeasurement service to find UoM, 
+ * then calls generateTimeseriesForUom function to generate timeseries for found uom. 
+ * 
+ * @param { object } data data that was retrieved in observation service
+ * @param { Array<number> } timepoints timepoints between startTime and endTime in unix time 
+ * @return { object } timeseries created
+ */
+async function createTimeseries( data, timepoints ) {
 
     let timeseries = new Object();
 
@@ -16,16 +23,30 @@ async function addUoM( data, timepoints ) {
 
 }
 
-/* Function that calls other functions to generate a timeseries for the feature  */
+/** 
+ * Calls two other functions neeeded for generating observation timeseries for the feature 
+ * 
+ * @param { object } data data that was retrieved in observation service
+ * @param { date } startTime the start time of observations 
+ * @param { date } endTime  the end time of observations
+ * @return { object } timeseries generated
+ */
 async function generateTimeseries( data, startTime, endTime ) {
 
     const timepoints = generateTimepoints( startTime, endTime );
-    const timeseries = await addUoM( data, timepoints );
+    const timeseries = await createTimeseries( data, timepoints );
 
     return timeseries;
 }
 
-/* Function that generates timepoints for every one hour */
+/** 
+ * Generates timepoints for every one hour within timeperiod selected by user. For correctness of results, 
+ * startTime is set in frontend to be 30 mins earlier, and endTime 30 min later (or now) of the selected times!
+ * 
+ * @param { date } startTime the start time of observations
+ * @param { date } endTime  the end time of observations
+ * @return { Array<number> } generated timepoints between startTime and endTime in unix time
+ */
 function generateTimepoints( startTime, endTime  ) {
 
     let firstTime = new Date( startTime ).getTime();
@@ -43,7 +64,15 @@ function generateTimepoints( startTime, endTime  ) {
 
 }
 
-/* Function that generates timeseries for specific unit of measurement  */
+/** 
+ * Generates timeseries for specific unit of measurement. Observation results for each timepoint are counted in reverse while.
+ * After counting is completed addDataToTimeseries function is called to write timeseries.
+ * 
+ * @param { Array<number> } timepoints in unix time
+ * @param { object } observations observation times and results
+ * @param { string } unitofmeasurement uom of observations
+ * @return { object } timeseries with results written  
+ */
 function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement ) {
 
     const timeValuePairs = new Map();
@@ -53,7 +82,6 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
 
         const observationResults = countObservationResults( observations, timepoints[ i ] );
 
-        // Only add to timeseries if there is observation results
         if ( observationResults[ 0 ] > 0 ) {
 
             timeValuePairs.set( timepoints[ i ], observationResults );
@@ -69,7 +97,14 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
 
 }
 
-/* Function that counts observation results */
+/** 
+ * Counts observation results. If observation's time is within half hour of timepoint it is added to results and observation is removed from list
+ * Reverse while is used to increase peformance with larger datasets.
+ * 
+ * @param { object } observations observation times and results
+ * @param { number } time point of time in unix time
+ * @return { Array<number> } returns two values, count and total of observations within 30mins of unix time point
+ */
 function countObservationResults( observations, time ) {
 
     let count = 0;
@@ -92,7 +127,14 @@ function countObservationResults( observations, time ) {
 
 }
 
-/* Function that adds observation data to timeseries */
+/** 
+ * Checks if there is observation results found for each timepoint, if results are found it writes observation results to timeseries. 
+ * Averages for each hour of uom are written.
+ * 
+ * @param { Map<number, Array<number>> } timeValuePairs map containg observation result time-value pairs and count of observations
+ * @param { Array<number> } timepoints generated timepoints between startTime and endTime in unix time
+ * @param { object } timeseries without results
+ */
 function addDataToTimeseries( timeValuePairs, timepoints, timeseries ) {
 
     for ( let i = 0, len = timepoints.length; i < len; i++ ) {
@@ -108,8 +150,6 @@ function addDataToTimeseries( timeValuePairs, timepoints, timeseries ) {
         }
 
     }
-
-    return timeseries;
 
 }
 

@@ -1,5 +1,5 @@
 
-/* Function that processes queried data for faster timeseries generation  */
+/* LEGACY CODE STILL USE BY JEST! Functionality moved to sql query. Function that processes queried data for faster timeseries generation  */
 function preProcessdata( data ) {
 
     let processedData = []; 
