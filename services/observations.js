@@ -16,7 +16,7 @@ async function getMultiple( body ) {
   const latitude = body.latitude; 
   const longitude = body.longitude;
   let result = [];
-  let timeseries = [];
+  let observations = [];
 
   if ( startTime == null ) {
 
@@ -32,10 +32,6 @@ async function getMultiple( body ) {
 
   if ( ratu == '56181' || gmlid == 'BID_a03c680b-a156-473d-b210-ae261d808ebf' ) {
 
-//    result = await dbService.queryFVH(
-//      "SELECT o.id, o.phenomenontime_begin, o.result, datastream.unitofmeasurement, o.featureofinterest_id FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null AND o.phenomenontime_begin BETWEEN $1 AND $2", 
-//      [ startTime, endTime ]
-//    );
     result = await dbService.queryFVH(
       "SELECT datastream.unitofmeasurement AS uom, json_agg(json_build_object('time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id is not null AND datastream.unitofmeasurement LIKE 'http%' AND o.phenomenontime_begin BETWEEN $1 AND $2 GROUP BY datastream.unitofmeasurement", 
       [ startTime, endTime ]
@@ -65,18 +61,14 @@ async function getMultiple( body ) {
 
   }
 
-//  console.log( 'result.length', result.length );
-
   if ( result.length ) {
     
-//    let timeserviceStarted = new Date( Date.now() );
-    timeseries = await timeseriesService.generateTimeseries( result, startTime, endTime );
-//    console.log( 'timespent timeseries', new Date( Date.now() ) - timeserviceStarted, ' ms' );
+    observations = await timeseriesService.generateTimeseries( result, startTime, endTime );
  
   } 
 
   return {
-    timeseries
+    observations
   }
 }
 

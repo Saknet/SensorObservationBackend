@@ -134,6 +134,7 @@ function countObservationResults( observations, time ) {
  * @param { Map<number, Array<number>> } timeValuePairs map containg observation result time-value pairs and count of observations
  * @param { Array<number> } timepoints generated timepoints between startTime and endTime in unix time
  * @param { object } timeseries without results
+ * @return { object } timeseries with results
  */
 function addDataToTimeseries( timeValuePairs, timepoints, timeseries ) {
 
