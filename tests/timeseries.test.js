@@ -60,40 +60,14 @@ describe( "Add data to timeseries", () => {
    });
 
    test( 'With random dates', () => {
-      const timeseries = addDataToTimeseries( timeValuePairs, timepoints, { uom: 'joule', averages: [], observationtimes: [] } );
+      let timeseries = { uom: 'joule', averages: [], observationtimes: [], sensorcount: '5' }
+      addDataToTimeseries( timeValuePairs, timepoints, timeseries );
+
       expect( timeseries[ 'observationtimes' ] ).toHaveLength( timepoints.length );
       expect( timeseries[ 'averages' ] ).toHaveLength( timepoints.length  );
       expect( timeseries ).toHaveProperty( 'uom', 'joule' );
+      expect( timeseries ).toHaveProperty( 'sensorcount', '5' );
     } )
-
-} )
-
-describe('count observation results', () => {
-   let timepoints;
-   let endHours;
-   let startTime;
-   let endTime;
-   let startHours;
-
-   beforeEach(() => {
-      endHours = Math.floor( Math.random() * 1001 );
-      endTime = new Date( Date.now() - 3600000 * endHours );
-      startHours = 2 + endHours + Math.floor( Math.random() * 1001 );
-      startTime = new Date( Date.now() - 3600000 * startHours );
-      timepoints = generateTimepoints( startTime, endTime );
-   });
-
-   test( 'With random dates and data', () => {
-
-      for ( let i = 0, len = timepoints.length; i < len; i++ ) {
-         let value = Math.floor( Math.random() * 1000 );
-         let generateddata = generateObservationDataForDates( timepoints[ i ], value );
-         let results = countObservationResults( generateddata[ 0 ], timepoints[ i ] );
-         expect( results ).toContain( value )
-         expect( results ).toContain( generateddata[ 1 ] )
-      }
-
-   } )
 
 } )
 
@@ -148,7 +122,7 @@ describe('generate timeseries', () => {
    });
 
    test( 'Watts with random dates and data', async ()  => {
-      got.get = jest.fn().mockReturnValue({
+      got.get = jest.fn().mockReturnValue( {
          json: () => Promise.resolve(
             {
                "@context" : {
@@ -267,16 +241,18 @@ describe('generate timeseries', () => {
                   }
                   }
                ]
-            })
-      })
+            } )
+      } )
       
       const timeseries = await generateTimeseries( processedData, startTime, endTime ); 
-      expect( timeseries ).toHaveProperty( 'watt' );
-      expect( timeseries ).toHaveProperty( [ 'watt', 'averages' ] );
-      expect( timeseries ).toHaveProperty( [ 'watt', 'observationtimes' ] );
-      expect( timeseries[ 'watt' ].observationtimes.length ).toEqual( timeseries[ 'watt' ].averages.length );
-      expect( timeseries[ 'watt' ].observationtimes.length ).toEqual( startHours - endHours );
-      expect( timeseries[ 'watt' ].averages.length ).toEqual( startHours - endHours );
+      const wattdata = timeseries[ 0 ];
+      expect( timeseries.length ).toEqual( 1 );
+      expect( wattdata ).toHaveProperty( 'uom' );
+      expect( wattdata ).toHaveProperty( [ 'averages' ] );
+      expect( wattdata ).toHaveProperty( [ 'observationtimes' ] );
+      expect( wattdata.observationtimes.length ).toEqual( wattdata.averages.length );
+      expect( wattdata.observationtimes.length ).toEqual( startHours - endHours );
+      expect( wattdata.averages.length ).toEqual( startHours - endHours );
 
     } )
 

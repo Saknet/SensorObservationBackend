@@ -105,15 +105,15 @@ VALUES('Sörnäistenlaituri 5', 'apartment building', '{ "height": "29.6", "gmli
 INSERT INTO featureofinterest (name, description, feature) 
 VALUES('Capellanaukio 1', 'apartment building', '{ "height": "23.4", "gmlid": "BID_04b55dd6-c136-49a6-b142-723c0eb5ee89", "ratu": "64497", "vtj-prt": "103557252H", "coordinates": [60.184123347693394, 24.98310091824768] }');
 
-INSERT INTO datastream(unitofmeasurement)
-SELECT 'http://finto.fi/ucum/en/page/r418'
+INSERT INTO datastream(unitofmeasurement, sensor_id)
+SELECT 'http://finto.fi/ucum/en/page/r418', floor(random() * (200::int) + 1)
 FROM GENERATE_SERIES(1, 200);
 
 INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)
 SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (100::int) + 21), floor(random() * (200::int) + 1), floor(random() * (35::int) + 1) 
 FROM generate_series(1, 50000); 
 
-INSERT INTO datastream(unitofmeasurement)
+INSERT INTO datastream(unitofmeasurement, sensor_id)
 SELECT 
   (
     CASE (RANDOM() * 2)::INT
@@ -121,14 +121,14 @@ SELECT
       WHEN 1 THEN 'http://finto.fi/ucum/en/page/r59'
       WHEN 2 THEN 'http://finto.fi/ucum/en/page/r57'                  
     END
-  )
+  ), floor(random() * (600::int) + 1)
 FROM GENERATE_SERIES(1, 600);
 
 INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)
 SELECT to_timestamp( cast(extract(epoch from current_timestamp) as integer) - floor(random() * (604800::int) + 1)), floor(random() * (999::int) + 30), floor(random() * (600::int) + 201), floor(random() * (35::int) + 1) 
 FROM generate_series(1, 200000);
 
-INSERT INTO datastream(unitofmeasurement)
+INSERT INTO datastream(unitofmeasurement, sensor_id)
 SELECT 
   (
     CASE (RANDOM() * 2)::INT
@@ -136,7 +136,7 @@ SELECT
       WHEN 1 THEN 'http://finto.fi/ucum/en/page/r61'
       WHEN 2 THEN 'http://finto.fi/mesh/en/page/D052638'                  
     END
-  )
+  ), floor(random() * (600::int) + 1)
 FROM GENERATE_SERIES(1, 600);
 
 INSERT INTO observation(phenomenontime_begin, result, datastream_id, featureofinterest_id)

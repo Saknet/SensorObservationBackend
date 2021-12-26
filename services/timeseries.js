@@ -10,12 +10,13 @@ const unitofmeasurementService = require('./unitofmeasurement');
  */
 async function createTimeseries( data, timepoints ) {
 
-    let timeseries = new Object();
+    let timeseries = [];
 
     for ( let i = 0, len = data.length; i < len; i++ ) {
 
         let uom =  await unitofmeasurementService.getUoMFromFintoApi( data[ i ].uom );
-        timeseries[ uom ] = generateTimeseriesForUoM( timepoints, data[ i ].observations, uom );
+        let timeseriesUom = generateTimeseriesForUoM( timepoints, data[ i ].observations, uom, data[ i ].total_sensors );
+        timeseries.push( timeseriesUom );
 
     } 
 
@@ -73,7 +74,7 @@ function generateTimepoints( startTime, endTime  ) {
  * @param { string } unitofmeasurement uom of observations
  * @return { object } timeseries with results written  
  */
-function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement ) {
+function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement,  total_sensors ) {
 
     const timeValuePairs = new Map();
     let i = timepoints.length;
@@ -90,7 +91,7 @@ function generateTimeseriesForUoM( timepoints, observations, unitofmeasurement )
 
     }
 
-    let timeseries = { uom: unitofmeasurement, averages: [], observationtimes: [] };
+    let timeseries = { uom: unitofmeasurement, averages: [], observationtimes: [], sensorcount:  total_sensors };
     addDataToTimeseries( timeValuePairs, timepoints, timeseries );
     
     return timeseries;
@@ -133,7 +134,7 @@ function countObservationResults( observations, time ) {
  * 
  * @param { Map<number, Array<number>> } timeValuePairs map containg observation result time-value pairs and count of observations
  * @param { Array<number> } timepoints generated timepoints between startTime and endTime in unix time
- * @param { object } timeseries without results
+ * @param { object } timeseries where averages are written to
  */
 function addDataToTimeseries( timeValuePairs, timepoints, timeseries ) {
 
