@@ -1,6 +1,7 @@
 .env
 .git
 .dockerignore
+.eslintignore
 .DS_Store
 coverage/
 node_modules/

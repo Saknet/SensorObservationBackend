@@ -1,17 +1,17 @@
 const router = require( 'express' ).Router();
 const observations = require( '../services/observations' );
 
-router.post( '/', async function( req, res, next ) {
-  try {
+router.post( '/', async function ( req, res, next ) {
+    try {
 
-    res.json( await observations.getMultiple( req.body ) );
+        res.json( await observations.getMultiple( req.body ) );
 
-  } catch ( err ) {
+    } catch ( err ) {
 
-    console.error( `Error while getting observations`, err.message );
-    next( err );
+        console.error( 'Error while getting observations', err.message );
+        next( err );
 
-  }
-});
+    }
+} );
 
 module.exports = router;

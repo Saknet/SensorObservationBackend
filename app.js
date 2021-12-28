@@ -4,7 +4,7 @@ const cors = require( 'cors' );
 const cookieParser = require( 'cookie-parser' );
 
 const app = express();
-require('express-async-errors')
+require( 'express-async-errors' );
 
 const indexRouter = require( './routes/index' );
 const observationsRouter = require( './routes/observations' );

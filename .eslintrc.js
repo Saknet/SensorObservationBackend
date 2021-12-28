@@ -21,25 +21,21 @@ module.exports = {
             'error',
             'unix'
         ],
-        'quotes': [
-            'error',
-            'single'
-        ],
         'semi': [
             'error',
             'always'
         ],
-        "spaced-comment": ["error", "always", {
-            "line": {
-                "markers": ["/"],
-                "exceptions": ["-", "+"]
+        'spaced-comment': [ 'error', 'always', {
+            'line': {
+                'markers': [ '/' ],
+                'exceptions': [ '-', '+' ]
             },
-            "block": {
-                "markers": ["!"],
-                "exceptions": ["*"],
-                "balanced": true
+            'block': {
+                'markers': [ '!' ],
+                'exceptions': [ '*' ],
+                'balanced': true
             }
-        }],        
+        } ],
         'space-before-blocks': [
             'error',
             'always'
@@ -47,17 +43,17 @@ module.exports = {
         'space-before-function-paren': [
             'error',
             'always'
-        ],   
-        "space-in-parens": [
-            "error", "always"
-        ],     
+        ],
+        'space-in-parens': [
+            'error', 'always'
+        ],
         'eqeqeq': 'error',
-            'no-trailing-spaces': 'error',
-    'object-curly-spacing': [
-        'error', 'always'
-    ],
-    'arrow-spacing': [
-        'error', { 'before': true, 'after': true }
-    ]
+        'no-trailing-spaces': 'error',
+        'object-curly-spacing': [
+            'error', 'always'
+        ],
+        'arrow-spacing': [
+            'error', { 'before': true, 'after': true }
+        ]
     }
-}
+};
