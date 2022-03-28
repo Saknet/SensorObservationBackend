@@ -4,5 +4,6 @@
 .eslintignore
 .DS_Store
 coverage/
+postgres-data/
 node_modules/
 npm-debug.log/

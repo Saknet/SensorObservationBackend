@@ -41,22 +41,22 @@ async function getMultiple ( body ) {
 
     if ( !result.length && latitude && longitude ) {
 
-        const latmax = latitude + 0.0004;
-        const latmin = latitude  - 0.0004;
-        const longmax = longitude + 0.0004;
-        const longmin = longitude  - 0.0004;
+        const latmax = (latitude + 0.0004).toString();
+        const latmin = (latitude  - 0.0004).toString();
+        const longmax = (longitude + 0.0004).toString();
+        const longmin = (longitude  - 0.0004).toString(); 
+            
+        const bbox = 'POLYGON((' + longmin + ' ' + latmin + ', ' + longmin + ' ' + latmax + ', ' + longmax + ' ' + latmax + ', ' + longmax + ' ' + latmin + ', ' + longmin + ' ' + latmin + '))';
 
         const features = await dbService.query(
-            "SELECT * FROM featureofinterest WHERE (CAST ( feature #>>'{coordinates,0}' AS numeric ) BETWEEN $1 AND $2) AND (CAST ( feature #>>'{coordinates,1}' AS numeric )BETWEEN $3 AND $4)",
-            [ latmin, latmax, longmin, longmax ]
+            "SELECT id, ST_AsGeoJSON(feature) as feature FROM featureofinterest WHERE ST_Within(feature, ST_GeomFromText($1, 4326) ) ",
+            [ bbox ]
         );
-
-        console.log('features', features );
 
         if ( features.length ) {
 
-            let featureId = findClosestFeature( latitude, longitude, features ); 
-            console.log('featureId', featureId );
+            const featureId = findClosestFeature( latitude, longitude, features ); 
+
             result = await dbService.query(
                 "SELECT datastream.unitofmeasurement AS uom, COUNT ( DISTINCT datastream.sensor_id ) AS total_sensors, json_agg( json_build_object( 'time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id WHERE o.featureofinterest_id = $1 AND datastream.unitofmeasurement LIKE 'http%' AND o.phenomenontime_begin BETWEEN $2 AND $3 GROUP BY datastream.unitofmeasurement",
                 [ featureId, startTime, endTime ]
@@ -65,19 +65,10 @@ async function getMultiple ( body ) {
 
     }
 
-    if ( !result.length && latitude && longitude  ) {
-
-        result = await dbService.query(
-            "SELECT datastream.unitofmeasurement AS uom, COUNT ( DISTINCT datastream.sensor_id ) AS total_sensors, json_agg( json_build_object( 'time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE ( feature->>'latitude' )::text = $1 AND datastream.unitofmeasurement LIKE 'http%' AND ( feature->>'longitude' )::text = $2 AND o.phenomenontime_begin BETWEEN $3 AND $4 GROUP BY datastream.unitofmeasurement",
-            [ latitude, longitude, startTime, endTime ]
-        );
-
-    }
-
     if ( !result.length &&  ratu ) {
 
         result = await dbService.query(
-            "SELECT datastream.unitofmeasurement AS uom, COUNT ( DISTINCT datastream.sensor_id ) AS total_sensors, json_agg( json_build_object( 'time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE ( feature->>'ratu' )::text = $1 AND datastream.unitofmeasurement LIKE 'http%' AND o.phenomenontime_begin BETWEEN $2 AND $3 GROUP BY datastream.unitofmeasurement",
+            "SELECT datastream.unitofmeasurement AS uom, COUNT ( DISTINCT datastream.sensor_id ) AS total_sensors, json_agg( json_build_object( 'time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE ( properties->>'ratu' )::text = $1 AND datastream.unitofmeasurement LIKE 'http%' AND o.phenomenontime_begin BETWEEN $2 AND $3 GROUP BY datastream.unitofmeasurement",
             [ ratu, startTime, endTime ]
         );
 
@@ -86,7 +77,7 @@ async function getMultiple ( body ) {
     if ( !result.length && gmlid ) {
 
         result = await dbService.query(
-            "SELECT datastream.unitofmeasurement AS uom, COUNT ( DISTINCT datastream.sensor_id ) AS total_sensors, json_agg( json_build_object( 'time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE ( feature->>'gmlid' )::text = $1 AND datastream.unitofmeasurement LIKE 'http%' AND o.phenomenontime_begin BETWEEN $2 AND $3 GROUP BY datastream.unitofmeasurement",
+            "SELECT datastream.unitofmeasurement AS uom, COUNT ( DISTINCT datastream.sensor_id ) AS total_sensors, json_agg( json_build_object( 'time', o.phenomenontime_begin, 'result', o.result)) AS observations FROM observation o INNER JOIN datastream ON o.datastream_id = datastream.id INNER JOIN featureofinterest ON o.featureofinterest_id = featureofinterest.id WHERE ( properties->>'gmlid' )::text = $1 AND datastream.unitofmeasurement LIKE 'http%' AND o.phenomenontime_begin BETWEEN $2 AND $3 GROUP BY datastream.unitofmeasurement",
             [ gmlid, startTime, endTime ]
         );
 
@@ -110,11 +101,14 @@ function findClosestFeature( latitude, longitude, features ) {
 
     for ( let i = 0, len = features.length; i < len; i++ ) {
 
-        let distance = getDistance( latitude, longitude, features[ i ][ 'feature' ][ 'coordinates' ][ 0 ], features[ i ][ 'feature' ][ 'coordinates' ][ 1 ] );
+        const feature_lat = features[ i ]['feature'].substring(41, 50);
+        const feature_long = features[ i ]['feature'].substring(31, 40);
+
+        let distance = getDistance( longitude, latitude, Number(feature_long), Number(feature_lat) );
         
         if ( distance < closestDistance ) {
             closestDistance = distance;
-            closestId = features[ 'id' ];
+            closestId = features[ i ][ 'id' ];
         }
     }
 
@@ -122,8 +116,8 @@ function findClosestFeature( latitude, longitude, features ) {
 }
 
 function getDistance( x1, y1, x2, y2 ){
-    let y = x2 - x1;
-    let x = y2 - y1;
+    const y = x2 - x1;
+    const x = y2 - y1;
     
     return Math.sqrt( x * x + y * y );
 }

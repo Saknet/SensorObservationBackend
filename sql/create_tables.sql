@@ -1,3 +1,16 @@
+
+CREATE EXTENSION postgis_raster;
+-- Enable Topology∂∂
+CREATE EXTENSION postgis_sfcgal;
+-- rule based standardizer
+CREATE EXTENSION address_standardizer;
+-- example rule data set
+CREATE EXTENSION address_standardizer_data_us;
+
+ALTER EXTENSION postgis UPDATE;
+ALTER EXTENSION postgis_topology UPDATE;
+ALTER EXTENSION postgis_tiger_geocoder UPDATE;
+
 /* Create Tables */
 
 CREATE TABLE IF NOT EXISTS datastream (
@@ -6,7 +19,7 @@ CREATE TABLE IF NOT EXISTS datastream (
 	description text,
 	observationtype text,
 	unitofmeasurement text NOT NULL,
-	observedarea jsonb,
+	observedarea text,
 	phenomenontime_begin timestamp,
 	phenomenontime_end timestamp,
 	resulttime_begin timestamp,
@@ -22,7 +35,7 @@ CREATE TABLE IF NOT EXISTS featureofinterest (
     name text,
 	description text,
     encodingtype text,
-    feature jsonb,
+    feature geometry NOT NULL,
     properties jsonb,
     PRIMARY KEY (id)
 );
