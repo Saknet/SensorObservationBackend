@@ -115,11 +115,10 @@ function findClosestFeature( latitude, longitude, features ) {
     return closestId;
 }
 
-function getDistance( x1, y1, x2, y2 ){
-    const y = x2 - x1;
-    const x = y2 - y1;
+function getDistance( x1, y1, x2, y2 ) {
+
+    return Math.sqrt( Math.pow( ( x1 - x2 ), 2) + Math.pow( ( y1 - y2 )));
     
-    return Math.sqrt( x * x + y * y );
 }
 
 module.exports = {
