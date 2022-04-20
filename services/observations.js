@@ -97,14 +97,14 @@ async function getMultiple ( body ) {
 function findClosestFeature( latitude, longitude, features ) {
 
     let closestDistance = 9999999999; 
-    let closestId;
+    let closestId = features[ 0 ][ 'id' ];
 
     for ( let i = 0, len = features.length; i < len; i++ ) {
 
-        const feature_lat = features[ i ]['feature'].substring(41, 50);
-        const feature_long = features[ i ]['feature'].substring(31, 40);
-
-        let distance = getDistance( longitude, latitude, Number(feature_long), Number(feature_lat) );
+        const feature = JSON.parse( features[ i ][ 'feature' ] );
+        const feature_lat = Number( feature[ 'coordinates' ][ 1 ] );
+        const feature_long = Number( feature[ 'coordinates' ][ 0 ]);
+        const distance = getDistance( longitude, latitude, feature_long, feature_lat );
         
         if ( distance < closestDistance ) {
             closestDistance = distance;
